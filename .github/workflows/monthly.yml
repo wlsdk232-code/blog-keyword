@@ -2,9 +2,9 @@ name: 블로그 검색순위 자동 점검
 
 on:
   schedule:
-    # 매주 월요일 00:00 UTC = 한국시간 월요일 오전 9시
+    # 매주 목요일 00:00 UTC = 한국시간 목요일 오전 9시
     # (매월 1회로 바꾸려면 아래를 '0 0 1 * *' 로 수정하세요)
-    - cron: "0 0 * * 1"
+    - cron: "0 0 * * 4"
   workflow_dispatch: {}   # 깃허브 Actions 탭에서 수동 실행도 가능
 
 permissions:
