@@ -238,14 +238,20 @@ def run(args):
     if args.limit:
         posts = posts[: args.limit]
 
-    # 기존 이력 로드
-    data = {}
+    # 기존 데이터 로드 (posts: 글별 이력, snapshots: 회차별 요약 추이)
+    raw = {}
     if os.path.exists(DATA_FILE):
         try:
             with open(DATA_FILE, encoding="utf-8") as f:
-                data = json.load(f)
+                raw = json.load(f)
         except Exception:
-            data = {}
+            raw = {}
+    if isinstance(raw, dict) and "posts" in raw:
+        posts_db = raw.get("posts", {})
+        snapshots = raw.get("snapshots", [])
+    else:
+        posts_db = raw if isinstance(raw, dict) else {}   # 구버전(평면) 호환
+        snapshots = []
 
     today_str = today.isoformat()
     for n, p in enumerate(posts, 1):
@@ -261,23 +267,46 @@ def run(args):
                 rank, total, used_kw = r2, t2, short_kw
 
         url = "https://blog.naver.com/%s/%s" % (BLOG_ID, log_no)
-        rec = data.get(log_no, {})
+        rec = posts_db.get(log_no, {})
         rec.update({"title": p["title"], "url": url, "date": p["date"], "keyword": used_kw})
         hist = rec.get("history", [])
-        # 같은 날 재실행 시 중복 방지
-        hist = [h for h in hist if h.get("checked") != today_str]
+        hist = [h for h in hist if h.get("checked") != today_str]   # 같은 날 중복 방지
         hist.append({"checked": today_str, "rank": rank, "total": total})
-        rec["history"] = hist[-24:]  # 최근 24회만 보관
-        data[log_no] = rec
+        rec["history"] = hist[-24:]
+        posts_db[log_no] = rec
 
         rank_txt = ("%d위" % rank) if rank else "100위 밖"
         print("  [%d/%d] %-9s | %-22s | %s" % (n, len(posts), rank_txt, used_kw[:22], p["title"][:30]))
         time.sleep(0.12)
 
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    # 기간 지난 글 자동 삭제 (--all 이 아니면 최근 N개월만 유지)
+    if not args.all:
+        cutoff = months_ago(today, args.months)
+        before = len(posts_db)
+        posts_db = {k: v for k, v in posts_db.items()
+                    if (parse_date(v.get("date", "")) or today) >= cutoff}
+        removed = before - len(posts_db)
+        if removed:
+            print("  기간 지난 글 %d개 삭제 (최근 %d개월만 유지)" % (removed, args.months))
 
-    generate_html(data)
+    # 이번 회차 요약 스냅샷 적립 (상단 카드 추이 그래프용)
+    cur = [build_row(v) for v in posts_db.values()]
+    s_ranks = [r["rank"] for r in cur if r["exposed"]]
+    snap = {
+        "checked": today_str,
+        "total": len(cur),
+        "exposed": sum(1 for r in cur if r["exposed"]),
+        "page1": sum(1 for r in cur if r["top10"]),
+        "avg": round(sum(s_ranks) / len(s_ranks), 1) if s_ranks else 0,
+    }
+    snapshots = [s for s in snapshots if s.get("checked") != today_str]
+    snapshots.append(snap)
+    snapshots = snapshots[-52:]   # 최근 52회 보관
+
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump({"posts": posts_db, "snapshots": snapshots}, f, ensure_ascii=False, indent=2)
+
+    generate_html(posts_db, snapshots)
     print("\n완료! report.html 을 열어보세요.")
 
 
@@ -341,6 +370,7 @@ h1{font-size:24px;margin:0 0 6px}
 .card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px}
 .card .n{font-size:26px;font-weight:700}
 .card .l{color:var(--mut);font-size:13px;margin-top:4px}
+.card .spark{margin-top:8px;display:block;overflow:visible}
 .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
 .bar input{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;font-size:14px;width:230px}
 .bar select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
@@ -371,10 +401,10 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 <h1>디자인펀치 블로그 검색순위 리포트</h1>
 <div class="sub">blog.naver.com/giant7000 · 점검일시 __NOW__</div>
 <div class="cards">
-  <div class="card"><div class="n">__TOTAL__</div><div class="l">점검한 글</div></div>
-  <div class="card"><div class="n">__EXPOSED__</div><div class="l">상위 100위 노출</div></div>
-  <div class="card"><div class="n">__PAGE1__</div><div class="l">1페이지(10위 내)</div></div>
-  <div class="card"><div class="n">__AVG__</div><div class="l">평균 순위</div></div>
+  <div class="card"><div class="n">__TOTAL__</div><div class="l">점검한 글</div>__SPARK_TOTAL__</div>
+  <div class="card"><div class="n">__EXPOSED__</div><div class="l">상위 100위 노출</div>__SPARK_EXPOSED__</div>
+  <div class="card"><div class="n">__PAGE1__</div><div class="l">1페이지(10위 내)</div>__SPARK_PAGE1__</div>
+  <div class="card"><div class="n">__AVG__</div><div class="l">평균 순위</div>__SPARK_AVG__</div>
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·키워드 검색">
@@ -465,7 +495,34 @@ render();
 </body></html>"""
 
 
-def generate_html(data):
+def spark(values, color):
+    """회차별 값 리스트로 미니 추이 그래프(SVG) 생성."""
+    vals = [v for v in values if v is not None]
+    if not vals:
+        return ""
+    w, h, pad = 150, 34, 4
+    n = len(vals)
+    lo, hi = min(vals), max(vals)
+    rng = (hi - lo) or 1
+    if n == 1:
+        return ('<svg class="spark" width="%d" height="%d">'
+                '<circle cx="%.1f" cy="%.1f" r="3" fill="%s"/></svg>'
+                % (w, h, w / 2.0, h / 2.0, color))
+    pts = []
+    for i, v in enumerate(vals):
+        xx = pad + (w - 2 * pad) * (i / float(n - 1))
+        yy = pad + (h - 2 * pad) * (1 - (v - lo) / float(rng))
+        pts.append((xx, yy))
+    path = "M" + " L".join("%.1f %.1f" % p for p in pts)
+    lx, ly = pts[-1]
+    return ('<svg class="spark" width="%d" height="%d">'
+            '<path d="%s" fill="none" stroke="%s" stroke-width="2" stroke-linejoin="round"/>'
+            '<circle cx="%.1f" cy="%.1f" r="2.5" fill="%s"/></svg>'
+            % (w, h, path, color, lx, ly, color))
+
+
+def generate_html(data, snapshots=None):
+    snapshots = snapshots or []
     rows = [build_row(r) for r in data.values()]
     total = len(rows)
     exposed = sum(1 for r in rows if r["exposed"])
@@ -480,6 +537,10 @@ def generate_html(data):
             .replace("__EXPOSED__", str(exposed))
             .replace("__PAGE1__", str(page1))
             .replace("__AVG__", ("%.1f위" % avg if avg else "-"))
+            .replace("__SPARK_TOTAL__", spark([s.get("total") for s in snapshots], "#2563eb"))
+            .replace("__SPARK_EXPOSED__", spark([s.get("exposed") for s in snapshots], "#15803d"))
+            .replace("__SPARK_PAGE1__", spark([s.get("page1") for s in snapshots], "#b45309"))
+            .replace("__SPARK_AVG__", spark([s.get("avg") for s in snapshots], "#7c3aed"))
             .replace("__DATA__", json.dumps(rows, ensure_ascii=False)))
 
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
@@ -488,7 +549,7 @@ def generate_html(data):
 
 def main():
     ap = argparse.ArgumentParser(description="네이버 블로그 검색순위 점검")
-    ap.add_argument("--months", type=int, default=24, help="최근 N개월 글만 점검 (기본 24)")
+    ap.add_argument("--months", type=int, default=6, help="최근 N개월 글만 점검 (기본 6)")
     ap.add_argument("--all", action="store_true", help="전체 글 점검")
     ap.add_argument("--depth", type=int, default=100, help="검색 깊이(기본 100위까지)")
     ap.add_argument("--limit", type=int, default=0, help="앞에서 N개만(테스트용)")

@@ -22,11 +22,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 순위 점검 실행 (최근 24개월 글, 변동 추적)
+      - name: 순위 점검 실행 (최근 6개월 글, 변동 추적 + 오래된 글 정리)
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: python check_rankings.py --months 24
+        run: python check_rankings.py --months 6
 
       - name: 결과 저장(커밋)
         run: |
