@@ -344,6 +344,7 @@ h1{font-size:24px;margin:0 0 6px}
 .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
 .bar input{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;font-size:14px;width:230px}
 .bar select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
+.bar .chk{font-size:13px;color:#374151;display:flex;align-items:center;gap:5px;cursor:pointer}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
@@ -377,6 +378,13 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·키워드 검색">
+  <select id="period">
+    <option value="0">전체 기간</option>
+    <option value="2">최근 2개월</option>
+    <option value="6">최근 6개월</option>
+    <option value="12">최근 1년</option>
+  </select>
+  <label class="chk"><input type="checkbox" id="chg"> 변동 있는 글만</label>
   <div class="cnt" id="cnt"></div>
   <select id="per"><option value="25">25개씩</option><option value="50">50개씩</option><option value="100">100개씩</option></select>
 </div>
@@ -398,12 +406,15 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <script>
 const DATA = __DATA__;
-let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="";
+let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", period=0, changeOnly=false;
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
+function cutoffNum(m){const d=new Date();d.setMonth(d.getMonth()-m);return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\\"/g,"&quot;");}
 function filtered(){
   let d=DATA.slice();
   if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
+  if(period>0){const c=cutoffNum(period);d=d.filter(r=>r.dateNum>=c);}
+  if(changeOnly){d=d.filter(r=>r.trendCls==="up"||r.trendCls==="down");}
   d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
     if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
     return ((x||0)-(y||0))*sortDir;});
@@ -447,6 +458,8 @@ document.querySelectorAll("th[data-key]").forEach(function(th){
 });
 document.getElementById("q").addEventListener("input",function(e){query=e.target.value;page=1;render();});
 document.getElementById("per").addEventListener("change",function(e){perPage=parseInt(e.target.value);page=1;render();});
+document.getElementById("period").addEventListener("change",function(e){period=parseInt(e.target.value);page=1;render();});
+document.getElementById("chg").addEventListener("change",function(e){changeOnly=e.target.checked;page=1;render();});
 render();
 </script>
 </body></html>"""
