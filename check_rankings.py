@@ -283,125 +283,191 @@ def run(args):
 
 # ----------------------------- HTML 리포트 -----------------------------
 
-def rank_class(rank):
-    if rank is None:
-        return "miss"
-    if rank <= 10:
-        return "top"
-    if rank <= 30:
-        return "mid"
-    return "low"
+def build_row(rec):
+    h = rec.get("history", [])
+    cur = h[-1].get("rank") if h else None
+    prev = h[-2].get("rank") if len(h) >= 2 else None
+    exposed = cur is not None
+
+    if len(h) < 2:
+        t_label, t_val, t_cls = "NEW", None, "new"
+    elif cur is None and prev is None:
+        t_label, t_val, t_cls = "-", 0, "same"
+    elif prev is None:
+        t_label, t_val, t_cls = "신규진입", 999, "up"
+    elif cur is None:
+        t_label, t_val, t_cls = "이탈", -999, "down"
+    elif cur < prev:
+        t_label, t_val, t_cls = "▲ %d" % (prev - cur), (prev - cur), "up"
+    elif cur > prev:
+        t_label, t_val, t_cls = "▼ %d" % (cur - prev), -(cur - prev), "down"
+    else:
+        t_label, t_val, t_cls = "-", 0, "same"
+
+    d = parse_date(rec.get("date", ""))
+    date_num = (d.year * 10000 + d.month * 100 + d.day) if d else 0
+    kw = rec.get("keyword", "")
+    search_url = ("https://search.naver.com/search.naver?ssc=tab.blog.all&query="
+                  + urllib.parse.quote(kw))
+    return {
+        "date": rec.get("date", ""),
+        "dateNum": date_num,
+        "title": rec.get("title", ""),
+        "url": rec.get("url", ""),
+        "keyword": kw,
+        "searchUrl": search_url,
+        "rank": cur,
+        "rankSort": cur if exposed else 100000,
+        "exposed": exposed,
+        "top10": bool(exposed and cur <= 10),
+        "trendLabel": t_label,
+        "trendVal": (t_val if t_val is not None else -100000),
+        "trendCls": t_cls,
+    }
 
 
-def trend_html(hist):
-    ranks = [h["rank"] for h in hist if h.get("rank") is not None]
-    if len(hist) < 2:
-        return '<span class="t-new">NEW</span>'
-    cur = hist[-1].get("rank")
-    prev = hist[-2].get("rank")
-    if cur is None and prev is None:
-        return "-"
-    if prev is None:
-        return '<span class="t-up">신규진입</span>'
-    if cur is None:
-        return '<span class="t-down">이탈</span>'
-    if cur < prev:
-        return '<span class="t-up">▲ %d</span>' % (prev - cur)
-    if cur > prev:
-        return '<span class="t-down">▼ %d</span>' % (cur - prev)
-    return '<span class="t-same">-</span>'
-
-
-def generate_html(data):
-    rows = list(data.values())
-
-    def sort_key(r):
-        d = parse_date(r.get("date", "")) or datetime.date(1900, 1, 1)
-        return d
-    rows.sort(key=sort_key, reverse=True)
-
-    total = len(rows)
-    exposed = sum(1 for r in rows if r["history"] and r["history"][-1].get("rank"))
-    page1 = sum(1 for r in rows if r["history"] and (r["history"][-1].get("rank") or 999) <= 10)
-    ranks_now = [r["history"][-1]["rank"] for r in rows if r["history"] and r["history"][-1].get("rank")]
-    avg = (sum(ranks_now) / len(ranks_now)) if ranks_now else 0
-
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-
-    tr = []
-    for r in rows:
-        h = r["history"][-1] if r["history"] else {"rank": None}
-        rank = h.get("rank")
-        cls = rank_class(rank)
-        rank_txt = ("%d위" % rank) if rank else "100위 밖"
-        tr.append(
-            '<tr>'
-            '<td class="date">%s</td>'
-            '<td class="title"><a href="%s" target="_blank">%s</a></td>'
-            '<td class="kw">%s</td>'
-            '<td class="rank %s">%s</td>'
-            '<td class="trend">%s</td>'
-            '</tr>' % (
-                html.escape(r.get("date", "")),
-                html.escape(r.get("url", "")),
-                html.escape(r.get("title", "")),
-                html.escape(r.get("keyword", "")),
-                cls, rank_txt,
-                trend_html(r["history"]),
-            )
-        )
-
-    page = """<!DOCTYPE html>
+HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>디자인펀치 블로그 검색순위 리포트</title>
 <style>
-:root{{--bd:#e5e7eb;--mut:#6b7280;}}
-*{{box-sizing:border-box}}
-body{{font-family:-apple-system,'Apple SD Gothic Neo',Pretendard,sans-serif;margin:0;background:#f8fafc;color:#111827}}
-.wrap{{max-width:1100px;margin:0 auto;padding:32px 20px 80px}}
-h1{{font-size:24px;margin:0 0 6px}}
-.sub{{color:var(--mut);font-size:14px;margin-bottom:24px}}
-.cards{{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}}
-.card{{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px}}
-.card .n{{font-size:26px;font-weight:700}}
-.card .l{{color:var(--mut);font-size:13px;margin-top:4px}}
-table{{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden}}
-th,td{{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:top}}
-th{{background:#f1f5f9;font-size:13px;color:#374151;position:sticky;top:0}}
-td.date{{white-space:nowrap;color:var(--mut);font-size:13px}}
-td.title a{{color:#111827;text-decoration:none}}
-td.title a:hover{{text-decoration:underline}}
-td.kw{{color:#2563eb;font-size:13px;white-space:nowrap}}
-td.rank{{font-weight:700;white-space:nowrap}}
-.rank.top{{color:#15803d}} .rank.mid{{color:#b45309}} .rank.low{{color:#6b7280}} .rank.miss{{color:#9ca3af;font-weight:400}}
-.t-up{{color:#15803d;font-weight:600}} .t-down{{color:#dc2626;font-weight:600}} .t-new{{color:#2563eb;font-weight:600}} .t-same{{color:#9ca3af}}
-.note{{margin-top:18px;color:var(--mut);font-size:12px;line-height:1.6}}
+:root{--bd:#e5e7eb;--mut:#6b7280;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,'Apple SD Gothic Neo',Pretendard,sans-serif;margin:0;background:#f8fafc;color:#111827}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:24px;margin:0 0 6px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px}
+.card .n{font-size:26px;font-weight:700}
+.card .l{color:var(--mut);font-size:13px;margin-top:4px}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+.bar input{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;font-size:14px;width:230px}
+.bar select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
+th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
+th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
+td.date{white-space:nowrap;color:var(--mut);font-size:13px}
+td.title a{color:#111827;text-decoration:none}
+td.title a:hover{text-decoration:underline}
+a.kw{color:#2563eb;font-size:13px;text-decoration:none}
+a.kw:hover{text-decoration:underline}
+span.kw-off{color:#b0b6c0;font-size:13px}
+.rank{font-weight:700;white-space:nowrap}
+.rank.norm{color:#374151}
+.rank.miss{color:#9ca3af;font-weight:500;font-size:13px}
+.badge-top{display:inline-block;background:#dcfce7;color:#15803d;border:1px solid #86efac;border-radius:999px;padding:2px 10px;font-weight:700}
+.t-up{color:#15803d;font-weight:600}.t-down{color:#dc2626;font-weight:600}.t-new{color:#2563eb;font-weight:600}.t-same{color:#9ca3af}
+.pg{display:flex;gap:6px;justify-content:center;align-items:center;margin-top:18px;flex-wrap:wrap}
+.pg button{min-width:34px;padding:6px 10px;border:1px solid var(--bd);background:#fff;border-radius:8px;cursor:pointer;font-size:13px}
+.pg button.cur{background:#111827;color:#fff;border-color:#111827}
+.pg button:disabled{opacity:.4;cursor:default}
+.cnt{color:var(--mut);font-size:13px}
+.note{margin-top:18px;color:var(--mut);font-size:12px;line-height:1.6}
 </style></head>
 <body><div class="wrap">
 <h1>디자인펀치 블로그 검색순위 리포트</h1>
-<div class="sub">blog.naver.com/giant7000 · 점검일시 {now}</div>
+<div class="sub">blog.naver.com/giant7000 · 점검일시 __NOW__</div>
 <div class="cards">
-  <div class="card"><div class="n">{total}</div><div class="l">점검한 글</div></div>
-  <div class="card"><div class="n">{exposed}</div><div class="l">상위 100위 노출</div></div>
-  <div class="card"><div class="n">{page1}</div><div class="l">1페이지(10위 내)</div></div>
-  <div class="card"><div class="n">{avg}</div><div class="l">평균 순위</div></div>
+  <div class="card"><div class="n">__TOTAL__</div><div class="l">점검한 글</div></div>
+  <div class="card"><div class="n">__EXPOSED__</div><div class="l">상위 100위 노출</div></div>
+  <div class="card"><div class="n">__PAGE1__</div><div class="l">1페이지(10위 내)</div></div>
+  <div class="card"><div class="n">__AVG__</div><div class="l">평균 순위</div></div>
+</div>
+<div class="bar">
+  <input id="q" type="text" placeholder="제목·키워드 검색">
+  <div class="cnt" id="cnt"></div>
+  <select id="per"><option value="25">25개씩</option><option value="50">50개씩</option><option value="100">100개씩</option></select>
 </div>
 <table>
-<thead><tr><th>작성일</th><th>글 제목</th><th>검색 키워드</th><th>현재 순위</th><th>변동</th></tr></thead>
-<tbody>
-{rows}
-</tbody></table>
+<thead><tr>
+  <th data-key="dateNum" data-type="num">작성일<span class="ar"></span></th>
+  <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
+  <th data-key="keyword" data-type="str">검색 키워드<span class="ar"></span></th>
+  <th data-key="rankSort" data-type="num">현재 순위<span class="ar"></span></th>
+  <th data-key="trendVal" data-type="num">변동<span class="ar"></span></th>
+</tr></thead>
+<tbody id="tb"></tbody></table>
+<div class="pg" id="pg"></div>
 <div class="note">
-※ 순위는 네이버 <b>검색 API(유사도 기준)</b>로 측정한 값으로, 실제 통합검색 화면(광고·인플루언서·스마트블록 포함)과는 다소 차이가 있을 수 있습니다.<br>
-※ '검색 키워드'가 어색한 글은 keyword_overrides.csv 에 <code>글번호,키워드</code> 형식으로 추가하면 다음 점검부터 정확해집니다.<br>
-※ '변동'은 직전 점검 대비 순위 변화입니다.
+※ 순위는 네이버 <b>검색 API(유사도 기준)</b> 값으로, 실제 통합검색 화면(광고·인플루언서·스마트블록 포함)과는 다소 차이가 있을 수 있습니다.<br>
+※ 검색 키워드를 클릭하면 네이버 블로그 검색 결과로 이동합니다. (미노출 글은 비활성)<br>
+※ '검색 키워드'가 어색하면 keyword_overrides.csv 에 <code>글번호,키워드</code> 로 추가하세요. · '변동'은 직전 점검 대비 순위 변화입니다.
 </div>
-</div></body></html>""".format(
-        now=now, total=total, exposed=exposed, page1=page1,
-        avg=("%.1f위" % avg if avg else "-"),
-        rows="\n".join(tr),
-    )
+</div>
+<script>
+const DATA = __DATA__;
+let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="";
+const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\\"/g,"&quot;");}
+function filtered(){
+  let d=DATA.slice();
+  if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
+  d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
+    if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
+    return ((x||0)-(y||0))*sortDir;});
+  return d;
+}
+function render(){
+  const d=filtered();
+  const pages=Math.max(1,Math.ceil(d.length/perPage));
+  if(page>pages)page=pages;
+  const start=(page-1)*perPage;
+  const slice=d.slice(start,start+perPage);
+  tb.innerHTML=slice.map(function(r){
+    const title='<a href="'+esc(r.url)+'" target="_blank">'+esc(r.title)+'</a>';
+    const kw=r.exposed?('<a class="kw" href="'+esc(r.searchUrl)+'" target="_blank">'+esc(r.keyword)+'</a>'):('<span class="kw-off">'+esc(r.keyword)+'</span>');
+    let rank;
+    if(!r.exposed){rank='<span class="rank miss">미노출</span>';}
+    else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
+    else{rank='<span class="rank norm">'+r.rank+'위</span>';}
+    const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
+    return '<tr><td class="date">'+esc(r.date)+'</td><td class="title">'+title+'</td><td>'+kw+'</td><td>'+rank+'</td><td>'+tr+'</td></tr>';
+  }).join("");
+  cnt.textContent="총 "+d.length+"개 · "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
+  let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
+  const win=2;
+  for(let i=1;i<=pages;i++){
+    if(i===1||i===pages||(i>=page-win&&i<=page+win)){
+      hh+='<button class="'+(i===page?'cur':'')+'" data-p="'+i+'">'+i+'</button>';
+    }else if(i===page-win-1||i===page+win+1){hh+='<span class="cnt">…</span>';}
+  }
+  hh+='<button '+(page>=pages?'disabled':'')+' data-p="'+(page+1)+'">다음</button>';
+  pg.innerHTML=hh;
+  pg.querySelectorAll("button[data-p]").forEach(function(b){b.onclick=function(){page=parseInt(b.dataset.p);render();window.scrollTo(0,0);};});
+  document.querySelectorAll("th[data-key]").forEach(function(th){
+    th.querySelector(".ar").textContent = th.dataset.key===sortKey ? (sortDir===1?"▲":"▼") : "";
+  });
+}
+document.querySelectorAll("th[data-key]").forEach(function(th){
+  th.onclick=function(){const k=th.dataset.key;
+    if(sortKey===k){sortDir=-sortDir;}else{sortKey=k;sortDir=1;}
+    page=1;render();};
+});
+document.getElementById("q").addEventListener("input",function(e){query=e.target.value;page=1;render();});
+document.getElementById("per").addEventListener("change",function(e){perPage=parseInt(e.target.value);page=1;render();});
+render();
+</script>
+</body></html>"""
+
+
+def generate_html(data):
+    rows = [build_row(r) for r in data.values()]
+    total = len(rows)
+    exposed = sum(1 for r in rows if r["exposed"])
+    page1 = sum(1 for r in rows if r["top10"])
+    ranks_now = [r["rank"] for r in rows if r["exposed"]]
+    avg = (sum(ranks_now) / len(ranks_now)) if ranks_now else 0
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    page = (HTML_TEMPLATE
+            .replace("__NOW__", now)
+            .replace("__TOTAL__", str(total))
+            .replace("__EXPOSED__", str(exposed))
+            .replace("__PAGE1__", str(page1))
+            .replace("__AVG__", ("%.1f위" % avg if avg else "-"))
+            .replace("__DATA__", json.dumps(rows, ensure_ascii=False)))
 
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(page)
