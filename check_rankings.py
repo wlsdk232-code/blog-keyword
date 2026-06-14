@@ -374,7 +374,9 @@ h1{font-size:24px;margin:0 0 6px}
 .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
 .bar input{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;font-size:14px;width:230px}
 .bar select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
-.bar .chk{font-size:13px;color:#374151;display:flex;align-items:center;gap:5px;cursor:pointer}
+.bar .chk{font-size:13px;color:#374151;display:flex;align-items:center;gap:5px;cursor:pointer;white-space:nowrap}
+.bar .chk input{width:15px;height:15px;margin:0;cursor:pointer}
+td.empty{text-align:center;color:#9ca3af;padding:34px 12px;font-size:14px}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
@@ -448,7 +450,7 @@ function render(){
   if(page>pages)page=pages;
   const start=(page-1)*perPage;
   const slice=d.slice(start,start+perPage);
-  tb.innerHTML=slice.map(function(r){
+  const rowsHtml=slice.map(function(r){
     const title='<a href="'+esc(r.url)+'" target="_blank">'+esc(r.title)+'</a>';
     const kw=r.exposed?('<a class="kw" href="'+esc(r.searchUrl)+'" target="_blank">'+esc(r.keyword)+'</a>'):('<span class="kw-off">'+esc(r.keyword)+'</span>');
     let rank;
@@ -458,6 +460,7 @@ function render(){
     const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
     return '<tr><td class="date">'+esc(r.date)+'</td><td class="title">'+title+'</td><td>'+kw+'</td><td>'+rank+'</td><td>'+tr+'</td></tr>';
   }).join("");
+  tb.innerHTML = rowsHtml || ('<tr><td colspan="5" class="empty">'+(changeOnly?'아직 순위 변동 데이터가 없어요. 다음 자동 점검(금요일)부터 ▲▼ 변동이 표시됩니다.':'표시할 글이 없습니다.')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 · "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
   let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
   const win=2;
