@@ -398,6 +398,27 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 .pg button:disabled{opacity:.4;cursor:default}
 .cnt{color:var(--mut);font-size:13px}
 .note{margin-top:18px;color:var(--mut);font-size:12px;line-height:1.6}
+.card .spark{max-width:100%;height:auto}
+@media(max-width:680px){
+  .wrap{padding:20px 12px 60px}
+  h1{font-size:20px}
+  .cards{grid-template-columns:repeat(2,1fr);gap:8px}
+  .card{padding:13px}
+  .card .n{font-size:22px}
+  .bar{align-items:stretch}
+  .bar input{width:100%}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  table{border:none;background:transparent;border-radius:0}
+  tr{border:1px solid var(--bd);border-radius:10px;margin-bottom:10px;padding:8px 12px;background:#fff}
+  td{border:none;padding:7px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;text-align:right}
+  td::before{content:attr(data-label);color:var(--mut);font-weight:600;font-size:12px;text-align:left;flex:0 0 auto}
+  td.title{display:block;text-align:left}
+  td.title::before{display:block;margin-bottom:4px}
+  td.title a{font-weight:600}
+  td.empty{display:block;text-align:center}
+  td.empty::before{display:none}
+}
 </style></head>
 <body><div class="wrap">
 <h1>디자인펀치 블로그 검색순위 리포트</h1>
@@ -458,7 +479,7 @@ function render(){
     else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
     else{rank='<span class="rank norm">'+r.rank+'위</span>';}
     const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
-    return '<tr><td class="date">'+esc(r.date)+'</td><td class="title">'+title+'</td><td>'+kw+'</td><td>'+rank+'</td><td>'+tr+'</td></tr>';
+    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td data-label="검색 키워드">'+kw+'</td><td data-label="현재 순위">'+rank+'</td><td data-label="변동">'+tr+'</td></tr>';
   }).join("");
   tb.innerHTML = rowsHtml || ('<tr><td colspan="5" class="empty">'+(changeOnly?'아직 순위 변동 데이터가 없어요. 다음 자동 점검(금요일)부터 ▲▼ 변동이 표시됩니다.':'표시할 글이 없습니다.')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 · "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
@@ -499,9 +520,9 @@ def spark(values, color):
     lo, hi = min(vals), max(vals)
     rng = (hi - lo) or 1
     if n == 1:
-        return ('<svg class="spark" width="%d" height="%d">'
+        return ('<svg class="spark" width="%d" height="%d" viewBox="0 0 %d %d">'
                 '<circle cx="%.1f" cy="%.1f" r="3" fill="%s"/></svg>'
-                % (w, h, w / 2.0, h / 2.0, color))
+                % (w, h, w, h, w / 2.0, h / 2.0, color))
     pts = []
     for i, v in enumerate(vals):
         xx = pad + (w - 2 * pad) * (i / float(n - 1))
@@ -509,10 +530,10 @@ def spark(values, color):
         pts.append((xx, yy))
     path = "M" + " L".join("%.1f %.1f" % p for p in pts)
     lx, ly = pts[-1]
-    return ('<svg class="spark" width="%d" height="%d">'
+    return ('<svg class="spark" width="%d" height="%d" viewBox="0 0 %d %d">'
             '<path d="%s" fill="none" stroke="%s" stroke-width="2" stroke-linejoin="round"/>'
             '<circle cx="%.1f" cy="%.1f" r="2.5" fill="%s"/></svg>'
-            % (w, h, path, color, lx, ly, color))
+            % (w, h, w, h, path, color, lx, ly, color))
 
 
 def generate_html(data, snapshots=None):
