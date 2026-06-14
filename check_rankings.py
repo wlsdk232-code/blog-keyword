@@ -408,12 +408,6 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·키워드 검색">
-  <select id="period">
-    <option value="0">전체 기간</option>
-    <option value="2">최근 2개월</option>
-    <option value="6">최근 6개월</option>
-    <option value="12">최근 1년</option>
-  </select>
   <label class="chk"><input type="checkbox" id="chg"> 변동 있는 글만</label>
   <div class="cnt" id="cnt"></div>
   <select id="per"><option value="25">25개씩</option><option value="50">50개씩</option><option value="100">100개씩</option></select>
@@ -436,14 +430,12 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <script>
 const DATA = __DATA__;
-let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", period=0, changeOnly=false;
+let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", changeOnly=false;
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
-function cutoffNum(m){const d=new Date();d.setMonth(d.getMonth()-m);return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\\"/g,"&quot;");}
 function filtered(){
   let d=DATA.slice();
   if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
-  if(period>0){const c=cutoffNum(period);d=d.filter(r=>r.dateNum>=c);}
   if(changeOnly){d=d.filter(r=>r.trendCls==="up"||r.trendCls==="down");}
   d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
     if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
@@ -488,7 +480,6 @@ document.querySelectorAll("th[data-key]").forEach(function(th){
 });
 document.getElementById("q").addEventListener("input",function(e){query=e.target.value;page=1;render();});
 document.getElementById("per").addEventListener("change",function(e){perPage=parseInt(e.target.value);page=1;render();});
-document.getElementById("period").addEventListener("change",function(e){period=parseInt(e.target.value);page=1;render();});
 document.getElementById("chg").addEventListener("change",function(e){changeOnly=e.target.checked;page=1;render();});
 render();
 </script>
