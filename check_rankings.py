@@ -28,8 +28,7 @@ import datetime
 import urllib.parse
 import urllib.request
 
-BLOG_ID = "giant7000"
-BLOGGER_LINK = "blog.naver.com/giant7000"
+BLOG_IDS = ["giant7000", "front_loveme", "math1004love"]   # 추적할 블로그 아이디들
 SEARCH_API = "https://openapi.naver.com/v1/search/blog.json"
 LIST_API = "https://blog.naver.com/PostTitleListAsync.naver"
 
@@ -92,19 +91,19 @@ def http_get(url, headers=None, timeout=20):
         return resp.read().decode("utf-8")
 
 
-def fetch_all_posts():
-    """네이버 비공개 글목록 엔드포인트로 전체 글(제목/글번호/날짜)을 수집."""
+def fetch_all_posts(blog_id):
+    """네이버 비공개 글목록 엔드포인트로 한 블로그의 전체 글(제목/글번호/날짜)을 수집."""
     posts = []
     page = 1
     per = 30
     while True:
         params = urllib.parse.urlencode({
-            "blogId": BLOG_ID, "viewdate": "", "currentPage": page,
+            "blogId": blog_id, "viewdate": "", "currentPage": page,
             "countPerPage": per, "categoryNo": 0, "parentCategoryNo": "",
         })
         try:
             raw = http_get(LIST_API + "?" + params,
-                           headers={"Referer": "https://blog.naver.com/" + BLOG_ID})
+                           headers={"Referer": "https://blog.naver.com/" + blog_id})
         except Exception as e:
             print("[경고] 글목록 %d페이지 수집 실패: %s" % (page, e))
             break
@@ -117,7 +116,7 @@ def fetch_all_posts():
         for i, (log_no, enc_title) in enumerate(pairs):
             title = urllib.parse.unquote_plus(enc_title).strip()
             date = dates[i].strip() if i < len(dates) else ""
-            posts.append({"logNo": log_no, "title": title, "date": date})
+            posts.append({"logNo": log_no, "title": title, "date": date, "blog": blog_id})
         if len(pairs) < per:
             break
         page += 1
@@ -189,9 +188,9 @@ def search_blog(query, cid, csec, display=100, start=1):
     return json.loads(raw)
 
 
-def find_rank(log_no, keyword, cid, csec, depth=100):
-    """keyword 로 검색해 해당 글(logNo)이 몇 위인지. 없으면 (None, total)."""
-    needle = "/" + str(log_no)
+def find_rank(blog_id, log_no, keyword, cid, csec, depth=100):
+    """keyword 로 검색해 해당 글이 몇 위인지. 없으면 (None, total)."""
+    needle = "/" + blog_id + "/" + str(log_no)
     base = 0
     start = 1
     total = None
@@ -221,22 +220,20 @@ def run(args):
     cid, csec = get_keys()
     overrides = load_overrides()
 
-    print("글 목록 수집 중...")
-    posts = fetch_all_posts()
-    print("  전체 %d개 글 발견" % len(posts))
-
     today = datetime.date.today()
-    if not args.all:
-        cutoff = months_ago(today, args.months)
-        filtered = []
-        for p in posts:
-            d = parse_date(p["date"])
-            if d is None or d >= cutoff:
-                filtered.append(p)
-        posts = filtered
-        print("  최근 %d개월 기준 %d개 점검 대상" % (args.months, len(posts)))
+    cutoff = months_ago(today, args.months)
+
+    print("글 목록 수집 중... (블로그 %d곳)" % len(BLOG_IDS))
+    posts = []
+    for bid in BLOG_IDS:
+        bp = fetch_all_posts(bid)
+        kept = [p for p in bp
+                if args.all or parse_date(p["date"]) is None or parse_date(p["date"]) >= cutoff]
+        print("  [%s] 전체 %d개 / 최근 %d개월 %d개" % (bid, len(bp), args.months, len(kept)))
+        posts.extend(kept)
     if args.limit:
         posts = posts[: args.limit]
+    print("  점검 대상 총 %d개" % len(posts))
 
     # 기존 데이터 로드 (posts: 글별 이력, snapshots: 회차별 요약 추이)
     raw = {}
@@ -250,33 +247,44 @@ def run(args):
         posts_db = raw.get("posts", {})
         snapshots = raw.get("snapshots", [])
     else:
-        posts_db = raw if isinstance(raw, dict) else {}   # 구버전(평면) 호환
+        posts_db = raw if isinstance(raw, dict) else {}
         snapshots = []
+    # 구버전(단일 블로그·평면 키) 마이그레이션 -> "blogid/logNo" 키
+    mig = {}
+    for k, v in posts_db.items():
+        if "/" not in k:
+            v.setdefault("blog", "giant7000")
+            mig["giant7000/" + k] = v
+        else:
+            mig[k] = v
+    posts_db = mig
 
     today_str = today.isoformat()
     for n, p in enumerate(posts, 1):
+        bid = p["blog"]
         log_no = p["logNo"]
-        keyword = overrides.get(log_no) or extract_keyword(p["title"])
-        rank, total = find_rank(log_no, keyword, cid, csec, depth=args.depth)
+        key = bid + "/" + log_no
+        keyword = overrides.get(key) or overrides.get(log_no) or extract_keyword(p["title"])
+        rank, total = find_rank(bid, log_no, keyword, cid, csec, depth=args.depth)
         # 못 찾았고 키워드가 길면, 앞 2어절로 한 번 더 시도
         used_kw = keyword
         if rank is None and len(keyword.split()) > 2:
             short_kw = " ".join(keyword.split()[:2])
-            r2, t2 = find_rank(log_no, short_kw, cid, csec, depth=args.depth)
+            r2, t2 = find_rank(bid, log_no, short_kw, cid, csec, depth=args.depth)
             if r2 is not None:
                 rank, total, used_kw = r2, t2, short_kw
 
-        url = "https://blog.naver.com/%s/%s" % (BLOG_ID, log_no)
-        rec = posts_db.get(log_no, {})
-        rec.update({"title": p["title"], "url": url, "date": p["date"], "keyword": used_kw})
+        url = "https://blog.naver.com/%s/%s" % (bid, log_no)
+        rec = posts_db.get(key, {})
+        rec.update({"blog": bid, "title": p["title"], "url": url, "date": p["date"], "keyword": used_kw})
         hist = rec.get("history", [])
         hist = [h for h in hist if h.get("checked") != today_str]   # 같은 날 중복 방지
         hist.append({"checked": today_str, "rank": rank, "total": total})
         rec["history"] = hist[-24:]
-        posts_db[log_no] = rec
+        posts_db[key] = rec
 
         rank_txt = ("%d위" % rank) if rank else "100위 밖"
-        print("  [%d/%d] %-9s | %-22s | %s" % (n, len(posts), rank_txt, used_kw[:22], p["title"][:30]))
+        print("  [%d/%d] %-13s %-7s | %-18s | %s" % (n, len(posts), bid, rank_txt, used_kw[:18], p["title"][:24]))
         time.sleep(0.12)
 
     # 기간 지난 글 자동 삭제 (--all 이 아니면 최근 N개월만 유지)
@@ -339,6 +347,7 @@ def build_row(rec):
     search_url = ("https://search.naver.com/search.naver?ssc=tab.blog.all&query="
                   + urllib.parse.quote(kw))
     return {
+        "blog": rec.get("blog", ""),
         "date": rec.get("date", ""),
         "dateNum": date_num,
         "title": rec.get("title", ""),
@@ -382,6 +391,7 @@ th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-s
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
 th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
 td.date{white-space:nowrap;color:var(--mut);font-size:13px}
+td.blog{color:#6b7280;font-size:13px;white-space:nowrap}
 td.title a{color:#111827;text-decoration:none}
 td.title a:hover{text-decoration:underline}
 a.kw{color:#2563eb;font-size:13px;text-decoration:none}
@@ -431,6 +441,7 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·키워드 검색">
+  <select id="blog">__BLOG_OPTIONS__</select>
   <label class="chk"><input type="checkbox" id="chg"> 변동 있는 글만</label>
   <div class="cnt" id="cnt"></div>
   <select id="per"><option value="25">25개씩</option><option value="50">50개씩</option><option value="100">100개씩</option></select>
@@ -438,6 +449,7 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 <table>
 <thead><tr>
   <th data-key="dateNum" data-type="num">작성일<span class="ar"></span></th>
+  <th data-key="blog" data-type="str">블로그<span class="ar"></span></th>
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
   <th data-key="keyword" data-type="str">검색 키워드<span class="ar"></span></th>
   <th data-key="rankSort" data-type="num">현재 순위<span class="ar"></span></th>
@@ -453,12 +465,13 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <script>
 const DATA = __DATA__;
-let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", changeOnly=false;
+let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", changeOnly=false, blogSel="";
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\\"/g,"&quot;");}
 function filtered(){
   let d=DATA.slice();
   if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
+  if(blogSel){d=d.filter(r=>r.blog===blogSel);}
   if(changeOnly){d=d.filter(r=>r.trendCls==="up"||r.trendCls==="down");}
   d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
     if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
@@ -479,9 +492,9 @@ function render(){
     else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
     else{rank='<span class="rank norm">'+r.rank+'위</span>';}
     const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
-    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td data-label="검색 키워드">'+kw+'</td><td data-label="현재 순위">'+rank+'</td><td data-label="변동">'+tr+'</td></tr>';
+    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td class="title" data-label="글 제목">'+title+'</td><td data-label="검색 키워드">'+kw+'</td><td data-label="현재 순위">'+rank+'</td><td data-label="변동">'+tr+'</td></tr>';
   }).join("");
-  tb.innerHTML = rowsHtml || ('<tr><td colspan="5" class="empty">'+(changeOnly?'아직 순위 변동 데이터가 없어요. 다음 자동 점검(금요일)부터 ▲▼ 변동이 표시됩니다.':'표시할 글이 없습니다.')+'</td></tr>');
+  tb.innerHTML = rowsHtml || ('<tr><td colspan="6" class="empty">'+(changeOnly?'아직 순위 변동 데이터가 없어요. 다음 자동 점검부터 ▲▼ 변동이 표시됩니다.':'표시할 글이 없습니다.')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 · "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
   let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
   const win=2;
@@ -504,6 +517,7 @@ document.querySelectorAll("th[data-key]").forEach(function(th){
 });
 document.getElementById("q").addEventListener("input",function(e){query=e.target.value;page=1;render();});
 document.getElementById("per").addEventListener("change",function(e){perPage=parseInt(e.target.value);page=1;render();});
+document.getElementById("blog").addEventListener("change",function(e){blogSel=e.target.value;page=1;render();});
 document.getElementById("chg").addEventListener("change",function(e){changeOnly=e.target.checked;page=1;render();});
 render();
 </script>
@@ -545,9 +559,13 @@ def generate_html(data, snapshots=None):
     ranks_now = [r["rank"] for r in rows if r["exposed"]]
     avg = (sum(ranks_now) / len(ranks_now)) if ranks_now else 0
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    present = [b for b in BLOG_IDS if any(r["blog"] == b for r in rows)]
+    blog_opts = '<option value="">전체 블로그</option>' + "".join(
+        '<option value="%s">%s</option>' % (html.escape(b), html.escape(b)) for b in present)
 
     page = (HTML_TEMPLATE
             .replace("__NOW__", now)
+            .replace("__BLOG_OPTIONS__", blog_opts)
             .replace("__TOTAL__", str(total))
             .replace("__EXPOSED__", str(exposed))
             .replace("__PAGE1__", str(page1))
