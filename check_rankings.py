@@ -297,19 +297,24 @@ def run(args):
         if removed:
             print("  기간 지난 글 %d개 삭제 (최근 %d개월만 유지)" % (removed, args.months))
 
-    # 이번 회차 요약 스냅샷 적립 (상단 카드 추이 그래프용)
+    # 이번 회차 요약 스냅샷 적립 (전체 + 블로그별, 상단 카드 추이 그래프용)
     cur = [build_row(v) for v in posts_db.values()]
-    s_ranks = [r["rank"] for r in cur if r["exposed"]]
-    snap = {
-        "checked": today_str,
-        "total": len(cur),
-        "exposed": sum(1 for r in cur if r["exposed"]),
-        "page1": sum(1 for r in cur if r["top10"]),
-        "avg": round(sum(s_ranks) / len(s_ranks), 1) if s_ranks else 0,
-    }
+
+    def _metrics(rows):
+        rk = [r["rank"] for r in rows if r["exposed"]]
+        return {"total": len(rows),
+                "exposed": sum(1 for r in rows if r["exposed"]),
+                "page1": sum(1 for r in rows if r["top10"]),
+                "avg": round(sum(rk) / len(rk), 1) if rk else 0}
+
+    snap = {"checked": today_str, "overall": _metrics(cur), "blogs": {}}
+    for b in BLOG_IDS:
+        rb = [r for r in cur if r["blog"] == b]
+        if rb:
+            snap["blogs"][b] = _metrics(rb)
     snapshots = [s for s in snapshots if s.get("checked") != today_str]
     snapshots.append(snap)
-    snapshots = snapshots[-52:]   # 최근 52회 보관
+    snapshots = snapshots[-90:]   # 최근 90회 보관
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump({"posts": posts_db, "snapshots": snapshots}, f, ensure_ascii=False, indent=2)
@@ -409,6 +414,7 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 .cnt{color:var(--mut);font-size:13px}
 .note{margin-top:18px;color:var(--mut);font-size:12px;line-height:1.6}
 .card .spark{max-width:100%;height:auto}
+.card .spark-box{margin-top:8px;min-height:34px}
 @media(max-width:680px){
   .wrap{padding:20px 12px 60px}
   h1{font-size:20px}
@@ -434,10 +440,10 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 <h1>디자인펀치 블로그 검색순위 리포트</h1>
 <div class="sub">blog.naver.com/giant7000 · 점검일시 __NOW__</div>
 <div class="cards">
-  <div class="card"><div class="n">__TOTAL__</div><div class="l">점검한 글</div>__SPARK_TOTAL__</div>
-  <div class="card"><div class="n">__EXPOSED__</div><div class="l">상위 100위 노출</div>__SPARK_EXPOSED__</div>
-  <div class="card"><div class="n">__PAGE1__</div><div class="l">1페이지(10위 내)</div>__SPARK_PAGE1__</div>
-  <div class="card"><div class="n">__AVG__</div><div class="l">평균 순위</div>__SPARK_AVG__</div>
+  <div class="card"><div class="n" id="c_total">__TOTAL__</div><div class="l">점검한 글</div><div class="spark-box" id="sp_total"></div></div>
+  <div class="card"><div class="n" id="c_exposed">__EXPOSED__</div><div class="l">상위 100위 노출</div><div class="spark-box" id="sp_exposed"></div></div>
+  <div class="card"><div class="n" id="c_page1">__PAGE1__</div><div class="l">1페이지(10위 내)</div><div class="spark-box" id="sp_page1"></div></div>
+  <div class="card"><div class="n" id="c_avg">__AVG__</div><div class="l">평균 순위</div><div class="spark-box" id="sp_avg"></div></div>
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·키워드 검색">
@@ -465,20 +471,52 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 </div>
 <script>
 const DATA = __DATA__;
+const SNAPS = __SNAPS__;
 let sortKey="dateNum", sortDir=-1, page=1, perPage=25, query="", changeOnly=false, blogSel="";
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\\"/g,"&quot;");}
-function filtered(){
+function scoped(){
   let d=DATA.slice();
-  if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
   if(blogSel){d=d.filter(r=>r.blog===blogSel);}
+  if(query){const q=query.toLowerCase();d=d.filter(r=>(r.title||"").toLowerCase().includes(q)||(r.keyword||"").toLowerCase().includes(q));}
+  return d;
+}
+function filtered(){
+  let d=scoped();
   if(changeOnly){d=d.filter(r=>r.trendCls==="up"||r.trendCls==="down");}
   d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
     if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
     return ((x||0)-(y||0))*sortDir;});
   return d;
 }
+function sparkSvg(vals,color){
+  vals=vals.filter(function(v){return v!=null;});
+  if(!vals.length)return "";
+  var w=150,h=34,pad=4,n=vals.length,lo=Math.min.apply(null,vals),hi=Math.max.apply(null,vals),rng=(hi-lo)||1;
+  if(n===1){return '<svg class="spark" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"><circle cx="'+(w/2)+'" cy="'+(h/2)+'" r="3" fill="'+color+'"/></svg>';}
+  var pts=vals.map(function(v,i){return [(pad+(w-2*pad)*i/(n-1)).toFixed(1),(pad+(h-2*pad)*(1-(v-lo)/rng)).toFixed(1)];});
+  var path="M"+pts.map(function(p){return p[0]+" "+p[1];}).join(" L");
+  var lst=pts[n-1];
+  return '<svg class="spark" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"><path d="'+path+'" fill="none" stroke="'+color+'" stroke-width="2" stroke-linejoin="round"/><circle cx="'+lst[0]+'" cy="'+lst[1]+'" r="2.5" fill="'+color+'"/></svg>';
+}
+function seriesFor(blog,metric){
+  return SNAPS.map(function(s){var m=blog?(s.blogs&&s.blogs[blog]):(s.overall||s);return m?m[metric]:null;});
+}
+function updateCards(){
+  var base=scoped();
+  var exp=base.filter(function(r){return r.exposed;});
+  document.getElementById("c_total").textContent=base.length;
+  document.getElementById("c_exposed").textContent=exp.length;
+  document.getElementById("c_page1").textContent=base.filter(function(r){return r.top10;}).length;
+  var rks=exp.map(function(r){return r.rank;});
+  document.getElementById("c_avg").textContent=rks.length?((rks.reduce(function(a,b){return a+b;},0)/rks.length).toFixed(1)+"위"):"-";
+  document.getElementById("sp_total").innerHTML=sparkSvg(seriesFor(blogSel,"total"),"#2563eb");
+  document.getElementById("sp_exposed").innerHTML=sparkSvg(seriesFor(blogSel,"exposed"),"#15803d");
+  document.getElementById("sp_page1").innerHTML=sparkSvg(seriesFor(blogSel,"page1"),"#b45309");
+  document.getElementById("sp_avg").innerHTML=sparkSvg(seriesFor(blogSel,"avg"),"#7c3aed");
+}
 function render(){
+  updateCards();
   const d=filtered();
   const pages=Math.max(1,Math.ceil(d.length/perPage));
   if(page>pages)page=pages;
@@ -570,10 +608,7 @@ def generate_html(data, snapshots=None):
             .replace("__EXPOSED__", str(exposed))
             .replace("__PAGE1__", str(page1))
             .replace("__AVG__", ("%.1f위" % avg if avg else "-"))
-            .replace("__SPARK_TOTAL__", spark([s.get("total") for s in snapshots], "#2563eb"))
-            .replace("__SPARK_EXPOSED__", spark([s.get("exposed") for s in snapshots], "#15803d"))
-            .replace("__SPARK_PAGE1__", spark([s.get("page1") for s in snapshots], "#b45309"))
-            .replace("__SPARK_AVG__", spark([s.get("avg") for s in snapshots], "#7c3aed"))
+            .replace("__SNAPS__", json.dumps(snapshots, ensure_ascii=False))
             .replace("__DATA__", json.dumps(rows, ensure_ascii=False)))
 
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
