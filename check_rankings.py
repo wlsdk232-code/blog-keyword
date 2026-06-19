@@ -596,7 +596,8 @@ def generate_html(data, snapshots=None):
     page1 = sum(1 for r in rows if r["top10"])
     ranks_now = [r["rank"] for r in rows if r["exposed"]]
     avg = (sum(ranks_now) / len(ranks_now)) if ranks_now else 0
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    KST = datetime.timezone(datetime.timedelta(hours=9))
+    now = datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M")
     present = [b for b in BLOG_IDS if any(r["blog"] == b for r in rows)]
     blog_opts = '<option value="">전체 블로그</option>' + "".join(
         '<option value="%s">%s</option>' % (html.escape(b), html.escape(b)) for b in present)
