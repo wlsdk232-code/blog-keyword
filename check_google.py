@@ -237,8 +237,8 @@ def run(args):
     old_posts = raw.get("posts", {}) if isinstance(raw, dict) else {}
     snapshots = raw.get("snapshots", []) if isinstance(raw, dict) else []
 
-    print("■ 구글 검색노출 점검 (지표 최근 %d일 / 발행 최근 %d개월 글 전체)"
-          % (args.days, args.max_age_months))
+    age_desc = ("발행 최근 %d개월" % args.max_age_months) if args.max_age_months > 0 else "등록된 전체"
+    print("■ 구글 검색노출 점검 (지표 최근 %d일 / %s 글)" % (args.days, age_desc))
 
     posts_db = {}
     for site, label, base in PROPERTIES:
@@ -261,8 +261,8 @@ def run(args):
                         d = datetime.date(int(nums[0]), int(nums[1]), int(nums[2]))
                     except ValueError:
                         d = None
-            # 6개월 필터 (발행일 알 때만 적용)
-            if d is not None and d < age_cutoff:
+            # 발행일 필터 (max_age_months>0 이고 발행일 알 때만 적용; 0이면 전체)
+            if args.max_age_months > 0 and d is not None and d < age_cutoff:
                 continue
             scd = sc.get(key, {})
             impr = scd.get("impr", 0)
@@ -281,7 +281,7 @@ def run(args):
             posts_db[full_key] = rec
             kept += 1
         exposed = sum(1 for k, info in listed.items() if sc.get(k, {}).get("impr", 0) > 0)
-        print("  [%s] 글 %d개 수집 / 6개월 내 %d개 / 노출 발생 %d개"
+        print("  [%s] 글 %d개 수집 / 포함 %d개 / 노출 발생 %d개"
               % (label, len(listed), kept, exposed))
 
     # 회차 스냅샷 (카드 추이용: 총글/노출글/총노출/총클릭)
@@ -419,7 +419,7 @@ td.num b{font-weight:700}
 <div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 __NOW__</div>
 <div class="nav">📊 <a href="report.html">네이버 블로그 검색순위 리포트 보기 →</a></div>
 <div class="cards">
-  <div class="card"><div class="n" id="c_total">__TOTAL__</div><div class="l">전체 글(6개월)</div><div class="spark-box" id="sp_total"></div></div>
+  <div class="card"><div class="n" id="c_total">__TOTAL__</div><div class="l">전체 글</div><div class="spark-box" id="sp_total"></div></div>
   <div class="card"><div class="n" id="c_exposed">__EXPOSED__</div><div class="l">노출된 글</div><div class="spark-box" id="sp_exposed"></div></div>
   <div class="card"><div class="n" id="c_impr">__IMPR__</div><div class="l">총 노출수(30일)</div><div class="spark-box" id="sp_impr"></div></div>
   <div class="card"><div class="n" id="c_clicks">__CLICKS__</div><div class="l">총 클릭수(30일)</div><div class="spark-box" id="sp_clicks"></div></div>
@@ -446,7 +446,7 @@ td.num b{font-weight:700}
 <div class="note">
 ※ 본 데이터는 구글 <b>Search Console</b> 기준이며, 실제 사람들이 검색해 내 글이 노출/클릭된 실측값입니다. (보통 2~3일 지연)<br>
 ※ <b>노출수</b> = 구글 검색결과에서 유저가 실제로 본 화면에 내 글이 뜬 횟수. <b>클릭수</b> = 그중 실제 방문 수. <b>클릭률</b> = 클릭÷노출.<br>
-※ 발행 <b>6개월 이내</b> 글을 모두 표시하며(노출 0 포함), 노출수·클릭수는 <b>최근 __DAYS__일</b> 합계입니다. '대표 검색어'는 노출이 가장 많은 검색어입니다.
+※ <b>등록된 전체 글</b>을 표시하며(노출 0 포함), 노출수·클릭수는 <b>최근 __DAYS__일</b> 합계입니다. '대표 검색어'는 노출이 가장 많은 검색어입니다.
 </div>
 </div>
 <script>
