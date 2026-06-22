@@ -1,103 +1,481 @@
 {
   "posts": {
-    "https://blog.designpunch.co.kr/224209381095": {
+    "인블로그|https://blog.designpunch.co.kr/surelyenglish": {
       "blog": "인블로그",
-      "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
-      "date": "2026-03-08",
-      "url": "https://blog.designpunch.co.kr/224209381095",
-      "keyword": "서비스 유지보수 범위는 어디까지인가요",
-      "impressions": 3,
+      "title": "맞춤형 학원 홈페이지 제작 사례 셜리영어학원",
+      "url": "https://blog.designpunch.co.kr/surelyenglish",
+      "date": "2026-06-10",
+      "keyword": "",
+      "impressions": 0,
       "clicks": 0,
       "history": [
         {
           "checked": "2026-06-22",
-          "rank": 5,
-          "impressions": 3,
+          "impressions": 0,
           "clicks": 0
         }
       ]
     },
-    "https://blog.designpunch.co.kr/export-voucher-website-guide": {
+    "인블로그|https://blog.designpunch.co.kr/export-voucher-website-guide": {
       "blog": "인블로그",
-      "title": "수출바우처 홈페이지 제작, \n수행기관 고르기 전에 확인할 3가지",
-      "date": "2026-06-08",
+      "title": "수출바우처 홈페이지 제작, 수행기관 고르기 전에 확인할 3가지",
       "url": "https://blog.designpunch.co.kr/export-voucher-website-guide",
+      "date": "2026-06-08",
       "keyword": "홈페이지제작수출바우처",
       "impressions": 12,
       "clicks": 0,
       "history": [
         {
           "checked": "2026-06-22",
-          "rank": 11.4,
           "impressions": 12,
           "clicks": 0
         }
       ]
     },
-    "https://blog.designpunch.co.kr/grimson": {
+    "인블로그|https://blog.designpunch.co.kr/namviet": {
+      "blog": "인블로그",
+      "title": "프랜차이즈 남월 홈페이지 제작 사례",
+      "url": "https://blog.designpunch.co.kr/namviet",
+      "date": "2026-04-30",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/litt-fair": {
+      "blog": "인블로그",
+      "title": "컨퍼런스 행사 홈페이지 제작 사례",
+      "url": "https://blog.designpunch.co.kr/litt-fair",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/bluel": {
+      "blog": "인블로그",
+      "title": "다국어 회사 홈페이지 제작 사례 블루엘",
+      "url": "https://blog.designpunch.co.kr/bluel",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/oiarchitects": {
+      "blog": "인블로그",
+      "title": "모던 컨셉의 건축 인테리어홈페이지제작 사례 오아이건축",
+      "url": "https://blog.designpunch.co.kr/oiarchitects",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/gltech": {
+      "blog": "인블로그",
+      "title": "바이오 엔지니어링 기업홈페이지제작 사례 지엘테크",
+      "url": "https://blog.designpunch.co.kr/gltech",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/goodwillstore": {
+      "blog": "인블로그",
+      "title": "사회적기업 홈페이지 제작 사례 굿윌스토어",
+      "url": "https://blog.designpunch.co.kr/goodwillstore",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/jss": {
+      "blog": "인블로그",
+      "title": "제조 기업 홈페이지 제작 JSS 제작 사례",
+      "url": "https://blog.designpunch.co.kr/jss",
+      "date": "2026-04-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/grimson": {
       "blog": "인블로그",
       "title": "미술관 홈페이지 제작 사례 그림손갤러리",
-      "date": "2026-04-29",
       "url": "https://blog.designpunch.co.kr/grimson",
+      "date": "2026-04-29",
       "keyword": "손 갤러리",
       "impressions": 1,
       "clicks": 0,
       "history": [
         {
           "checked": "2026-06-22",
-          "rank": 8,
           "impressions": 1,
           "clicks": 0
         }
       ]
     },
-    "https://blog.designpunch.co.kr/manufacturing-website-common-features": {
-      "blog": "인블로그",
-      "title": "제조업홈페이지제작 잘 만든 회사들의 공통점",
-      "date": "2026-02-28",
-      "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features",
-      "keyword": "제조업 홈페이지",
-      "impressions": 6,
-      "clicks": 0,
-      "history": [
-        {
-          "checked": "2026-06-22",
-          "rank": 12.3,
-          "impressions": 6,
-          "clicks": 0
-        }
-      ]
-    },
-    "https://blog.designpunch.co.kr/multilingual-website-localization-reasons": {
+    "인블로그|https://blog.designpunch.co.kr/multilingual-website-localization-reasons": {
       "blog": "인블로그",
       "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유",
-      "date": "2026-04-15",
       "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons",
+      "date": "2026-04-15",
       "keyword": "다국어 홈페이지 제작",
       "impressions": 1,
       "clicks": 0,
       "history": [
         {
           "checked": "2026-06-22",
-          "rank": 36,
           "impressions": 1,
           "clicks": 0
         }
       ]
     },
-    "https://blog.designpunch.co.kr/website-maintenance-guidelines": {
+    "인블로그|https://blog.designpunch.co.kr/thebareundental": {
+      "blog": "인블로그",
+      "title": "병원 홈페이 제작 사례 더바른치과의원 랜딩페이지",
+      "url": "https://blog.designpunch.co.kr/thebareundental",
+      "date": "2026-04-05",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/tebahkorea": {
+      "blog": "인블로그",
+      "title": "의료기기 제조업 영문 홈페이지 제작 사례 테바코리아",
+      "url": "https://blog.designpunch.co.kr/tebahkorea",
+      "date": "2026-04-04",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/helios785": {
+      "blog": "인블로그",
+      "title": "피부미용 레이저 랜딩페이지 제작 사례 헬리오스785",
+      "url": "https://blog.designpunch.co.kr/helios785",
+      "date": "2026-03-14",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/cheilfms": {
+      "blog": "인블로그",
+      "title": "기업 홈페이지 제작 사례 제일종합관리",
+      "url": "https://blog.designpunch.co.kr/cheilfms",
+      "date": "2026-03-14",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/website-maintenance-guidelines": {
       "blog": "인블로그",
       "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
-      "date": "2026-03-08",
       "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines",
+      "date": "2026-03-08",
       "keyword": "홈페이지유지보수",
       "impressions": 33,
       "clicks": 0,
       "history": [
         {
           "checked": "2026-06-22",
-          "rank": 28.2,
           "impressions": 33,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/steamedu": {
+      "blog": "인블로그",
+      "title": "AI 교육 홈페이지 제작 사례 STEAM융합교육센터",
+      "url": "https://blog.designpunch.co.kr/steamedu",
+      "date": "2026-03-07",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/custom-website-development": {
+      "blog": "인블로그",
+      "title": "홈페이지 제작 꼭 맞춤형으로 해야할까?",
+      "url": "https://blog.designpunch.co.kr/custom-website-development",
+      "date": "2026-03-01",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/manufacturing-website-common-features": {
+      "blog": "인블로그",
+      "title": "제조업홈페이지제작 잘 만든 회사들의 공통점",
+      "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features",
+      "date": "2026-02-28",
+      "keyword": "제조업 홈페이지",
+      "impressions": 6,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 6,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/ulvackorea": {
+      "blog": "인블로그",
+      "title": "제조기업 홈페이지 한국알박(Ulvac) 제작 사례",
+      "url": "https://blog.designpunch.co.kr/ulvackorea",
+      "date": "2026-01-09",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/nucellin": {
+      "blog": "인블로그",
+      "title": "정형외과 병원 홈페이지 제작 사례 누셀린클리닉",
+      "url": "https://blog.designpunch.co.kr/nucellin",
+      "date": "2026-01-06",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/author/user-660b977e": {
+      "blog": "인블로그",
+      "title": "- (주)디자인펀치",
+      "url": "https://blog.designpunch.co.kr/author/user-660b977e",
+      "date": "",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "인블로그|https://blog.designpunch.co.kr/author/inblog-team-837483": {
+      "blog": "인블로그",
+      "title": "inblog Team",
+      "url": "https://blog.designpunch.co.kr/author/inblog-team-837483",
+      "date": "",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EC%B9%B4%ED%8E%9824-%EC%87%BC%ED%95%91%EB%AA%B0-%EC%A0%9C%EC%9E%91-%EC%8B%9C%EC%9E%91-%EC%A0%84%EC%97%90-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80": {
+      "blog": "티스토리",
+      "title": "카페24 쇼핑몰 제작, 시작 전에 확인해야 할 3가지",
+      "url": "https://designpunch.tistory.com/entry/%EC%B9%B4%ED%8E%9824-%EC%87%BC%ED%95%91%EB%AA%B0-%EC%A0%9C%EC%9E%91-%EC%8B%9C%EC%9E%91-%EC%A0%84%EC%97%90-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80",
+      "date": "2026-06-19",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%9C%EC%9E%91-%EC%A0%84%EC%97%90-%EB%B0%98%EB%93%9C%EC%8B%9C-%EC%A0%95%ED%95%B4%EC%95%BC-%ED%95%A0-4%EA%B0%80%EC%A7%80-%E2%80%94-%EC%97%90%EC%9D%B4%EC%A0%84%EC%8B%9C-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C": {
+      "blog": "티스토리",
+      "title": "웹사이트 제작 전에 반드시 정해야 할 4가지 — 에이전시 실무 가이드",
+      "url": "https://designpunch.tistory.com/entry/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%9C%EC%9E%91-%EC%A0%84%EC%97%90-%EB%B0%98%EB%93%9C%EC%8B%9C-%EC%A0%95%ED%95%B4%EC%95%BC-%ED%95%A0-4%EA%B0%80%EC%A7%80-%E2%80%94-%EC%97%90%EC%9D%B4%EC%A0%84%EC%8B%9C-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C",
+      "date": "2026-06-18",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%8B%9C-SEO-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EC%B1%99%EA%B2%A8%EC%95%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%ED%95%B5%EC%8B%AC-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8": {
+      "blog": "티스토리",
+      "title": "홈페이지 제작 시 SEO, 처음부터 챙겨야 하는 이유와 핵심 체크리스트",
+      "url": "https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%8B%9C-SEO-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EC%B1%99%EA%B2%A8%EC%95%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%ED%95%B5%EC%8B%AC-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8",
+      "date": "2026-06-17",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%89%B4%EC%96%BC-%EC%A7%80%EA%B8%88-%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EC%A7%80-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-5%EA%B0%80%EC%A7%80-%EC%8B%A0%ED%98%B8": {
+      "blog": "티스토리",
+      "title": "홈페이지 리뉴얼, 지금 해야 하는지 판단하는 5가지 신호",
+      "url": "https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%89%B4%EC%96%BC-%EC%A7%80%EA%B8%88-%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EC%A7%80-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-5%EA%B0%80%EC%A7%80-%EC%8B%A0%ED%98%B8",
+      "date": "2026-06-16",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EA%B8%B0%EC%97%85-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-%EC%97%85%EC%B2%B4-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80": {
+      "blog": "티스토리",
+      "title": "기업 홈페이지 제작, 비용보다 먼저 확인해야 할 업체 선택 기준",
+      "url": "https://designpunch.tistory.com/entry/%EA%B8%B0%EC%97%85-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-%EC%97%85%EC%B2%B4-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80",
+      "date": "2026-06-15",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EB%B0%94%EC%9A%B0%EC%B2%98-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%A0%95%EB%B6%80-%EC%A7%80%EC%9B%90%EB%B0%9B%EA%B3%A0-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC": {
+      "blog": "티스토리",
+      "title": "바우처 홈페이지 제작, 정부 지원받고 만드는 방법 총정리",
+      "url": "https://designpunch.tistory.com/entry/%EB%B0%94%EC%9A%B0%EC%B2%98-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%A0%95%EB%B6%80-%EC%A7%80%EC%9B%90%EB%B0%9B%EA%B3%A0-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC",
+      "date": "2026-06-11",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EB%A7%9E%EC%B6%A4%ED%98%95-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80": {
+      "blog": "티스토리",
+      "title": "맞춤형 홈페이지 제작, 비용보다 먼저 확인해야 할 3가지",
+      "url": "https://designpunch.tistory.com/entry/%EB%A7%9E%EC%B6%A4%ED%98%95-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80",
+      "date": "2026-06-10",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "impressions": 0,
           "clicks": 0
         }
       ]
@@ -107,17 +485,23 @@
     {
       "checked": "2026-06-22",
       "overall": {
-        "total": 6,
-        "exposed": 6,
-        "page1": 2,
-        "avg": 16.8
+        "total": 30,
+        "exposed": 5,
+        "impressions": 53,
+        "clicks": 0
       },
       "blogs": {
         "인블로그": {
-          "total": 6,
-          "exposed": 6,
-          "page1": 2,
-          "avg": 16.8
+          "total": 23,
+          "exposed": 5,
+          "impressions": 53,
+          "clicks": 0
+        },
+        "티스토리": {
+          "total": 7,
+          "exposed": 0,
+          "impressions": 0,
+          "clicks": 0
         }
       }
     }

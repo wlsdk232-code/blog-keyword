@@ -33,13 +33,10 @@ td.title a{color:#111827;text-decoration:none}
 td.title a:hover{text-decoration:underline}
 a.kw{color:#2563eb;font-size:13px;text-decoration:none}
 a.kw:hover{text-decoration:underline}
-span.kw-off{color:#b0b6c0;font-size:13px}
-td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
-.rank{font-weight:700;white-space:nowrap}
-.rank.norm{color:#374151}
-.rank.miss{color:#9ca3af;font-weight:500;font-size:13px}
-.badge-top{display:inline-block;background:#dcfce7;color:#15803d;border:1px solid #86efac;border-radius:999px;padding:2px 10px;font-weight:700}
-.t-up{color:#15803d;font-weight:600}.t-down{color:#dc2626;font-weight:600}.t-new{color:#2563eb;font-weight:600}.t-same{color:#9ca3af}
+span.kw-off{color:#c0c4cc;font-size:13px}
+td.num{text-align:right;color:#374151;font-size:14px;white-space:nowrap}
+td.num b{font-weight:700}
+.muted0{color:#c0c4cc}
 .pg{display:flex;gap:6px;justify-content:center;align-items:center;margin-top:18px;flex-wrap:wrap}
 .pg button{min-width:34px;padding:6px 10px;border:1px solid var(--bd);background:#fff;border-radius:8px;cursor:pointer;font-size:13px}
 .pg button.cur{background:#111827;color:#fff;border-color:#111827}
@@ -71,18 +68,18 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 </style></head>
 <body><div class="wrap">
 <h1>디자인펀치 구글 검색노출 리포트</h1>
-<div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 2026-06-22 12:11</div>
+<div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 2026-06-22 12:31</div>
 <div class="nav">📊 <a href="report.html">네이버 블로그 검색순위 리포트 보기 →</a></div>
 <div class="cards">
-  <div class="card"><div class="n" id="c_total">6</div><div class="l">노출된 글</div><div class="spark-box" id="sp_total"></div></div>
-  <div class="card"><div class="n" id="c_exposed">6</div><div class="l">검색 노출 글</div><div class="spark-box" id="sp_exposed"></div></div>
-  <div class="card"><div class="n" id="c_page1">2</div><div class="l">1페이지(10위 내)</div><div class="spark-box" id="sp_page1"></div></div>
-  <div class="card"><div class="n" id="c_avg">16.8위</div><div class="l">평균 순위</div><div class="spark-box" id="sp_avg"></div></div>
+  <div class="card"><div class="n" id="c_total">30</div><div class="l">전체 글(6개월)</div><div class="spark-box" id="sp_total"></div></div>
+  <div class="card"><div class="n" id="c_exposed">5</div><div class="l">노출된 글</div><div class="spark-box" id="sp_exposed"></div></div>
+  <div class="card"><div class="n" id="c_impr">53</div><div class="l">총 노출수(30일)</div><div class="spark-box" id="sp_impr"></div></div>
+  <div class="card"><div class="n" id="c_clicks">0</div><div class="l">총 클릭수(30일)</div><div class="spark-box" id="sp_clicks"></div></div>
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·검색어 검색">
-  <select id="blog"><option value="">전체 블로그</option><option value="인블로그">인블로그</option></select>
-  <label class="chk"><input type="checkbox" id="chg"> 변동 있는 글만</label>
+  <select id="blog"><option value="">전체 블로그</option><option value="인블로그">인블로그</option><option value="티스토리">티스토리</option></select>
+  <label class="chk"><input type="checkbox" id="expo"> 노출된 글만</label>
   <div class="cnt" id="cnt"></div>
   <select id="per"><option value="25">25개씩</option><option value="50">50개씩</option><option value="100">100개씩</option></select>
 </div>
@@ -92,24 +89,22 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
   <th data-key="blog" data-type="str">블로그<span class="ar"></span></th>
   <th data-key="keyword" data-type="str">대표 검색어<span class="ar"></span></th>
-  <th data-key="rankSort" data-type="num">평균 순위<span class="ar"></span></th>
   <th data-key="impressions" data-type="num">노출수<span class="ar"></span></th>
   <th data-key="clicks" data-type="num">클릭수<span class="ar"></span></th>
-  <th data-key="trendVal" data-type="num">추세<span class="ar"></span></th>
+  <th data-key="ctr" data-type="num">클릭률<span class="ar"></span></th>
 </tr></thead>
 <tbody id="tb"></tbody></table>
 <div class="pg" id="pg"></div>
 <div class="note">
-※ 본 데이터는 구글 <b>Search Console</b> 기준이며, 실제 사람들이 검색해 내 글이 노출된 검색어/순위입니다. 데이터는 보통 2~3일 지연됩니다.<br>
-※ '대표 검색어'는 해당 글이 가장 많이 노출된 검색어 1개이며, '평균 순위'는 그 검색어에서의 구글 평균 노출 순위입니다.<br>
-※ 검색어를 클릭하면 해당 순위의 구글 검색결과 페이지로 이동합니다.<br>
-※ 노출수·클릭수·평균순위는 <b>최근 30일</b> 기준이며, <b>발행 6개월 이내</b> 글만 표시합니다.
+※ 본 데이터는 구글 <b>Search Console</b> 기준이며, 실제 사람들이 검색해 내 글이 노출/클릭된 실측값입니다. (보통 2~3일 지연)<br>
+※ <b>노출수</b> = 구글 검색결과에서 유저가 실제로 본 화면에 내 글이 뜬 횟수. <b>클릭수</b> = 그중 실제 방문 수. <b>클릭률</b> = 클릭÷노출.<br>
+※ 발행 <b>6개월 이내</b> 글을 모두 표시하며(노출 0 포함), 노출수·클릭수는 <b>최근 30일</b> 합계입니다. '대표 검색어'는 노출이 가장 많은 검색어입니다.
 </div>
 </div>
 <script>
-const DATA = [{"blog": "인블로그", "date": "2026-03-08", "dateNum": 20260308, "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/224209381095", "keyword": "서비스 유지보수 범위는 어디까지인가요", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%20%EB%B2%94%EC%9C%84%EB%8A%94%20%EC%96%B4%EB%94%94%EA%B9%8C%EC%A7%80%EC%9D%B8%EA%B0%80%EC%9A%94", "rank": 5, "rankSort": 5, "impressions": 3, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-06-08", "dateNum": 20260608, "title": "수출바우처 홈페이지 제작, \n수행기관 고르기 전에 확인할 3가지", "url": "https://blog.designpunch.co.kr/export-voucher-website-guide", "keyword": "홈페이지제작수출바우처", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%A0%9C%EC%9E%91%EC%88%98%EC%B6%9C%EB%B0%94%EC%9A%B0%EC%B2%98&start=10", "rank": 11.4, "rankSort": 11.4, "impressions": 12, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "미술관 홈페이지 제작 사례 그림손갤러리", "url": "https://blog.designpunch.co.kr/grimson", "keyword": "손 갤러리", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EC%86%90%20%EA%B0%A4%EB%9F%AC%EB%A6%AC", "rank": 8, "rankSort": 8, "impressions": 1, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-02-28", "dateNum": 20260228, "title": "제조업홈페이지제작 잘 만든 회사들의 공통점", "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features", "keyword": "제조업 홈페이지", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EC%A0%9C%EC%A1%B0%EC%97%85%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80&start=10", "rank": 12.3, "rankSort": 12.3, "impressions": 6, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-04-15", "dateNum": 20260415, "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유", "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons", "keyword": "다국어 홈페이지 제작", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EB%8B%A4%EA%B5%AD%EC%96%B4%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%A0%9C%EC%9E%91&start=30", "rank": 36, "rankSort": 36, "impressions": 1, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-03-08", "dateNum": 20260308, "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines", "keyword": "홈페이지유지보수", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98&start=20", "rank": 28.2, "rankSort": 28.2, "impressions": 33, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}];
-const SNAPS = [{"checked": "2026-06-22", "overall": {"total": 6, "exposed": 6, "page1": 2, "avg": 16.8}, "blogs": {"인블로그": {"total": 6, "exposed": 6, "page1": 2, "avg": 16.8}}}];
-let sortKey="impressions", sortDir=-1, page=1, perPage=25, query="", changeOnly=false, blogSel="";
+const DATA = [{"blog": "인블로그", "date": "2026-06-10", "dateNum": 20260610, "title": "맞춤형 학원 홈페이지 제작 사례 셜리영어학원", "url": "https://blog.designpunch.co.kr/surelyenglish", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-06-08", "dateNum": 20260608, "title": "수출바우처 홈페이지 제작, 수행기관 고르기 전에 확인할 3가지", "url": "https://blog.designpunch.co.kr/export-voucher-website-guide", "keyword": "홈페이지제작수출바우처", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%A0%9C%EC%9E%91%EC%88%98%EC%B6%9C%EB%B0%94%EC%9A%B0%EC%B2%98", "impressions": 12, "clicks": 0, "ctr": 0.0}, {"blog": "인블로그", "date": "2026-04-30", "dateNum": 20260430, "title": "프랜차이즈 남월 홈페이지 제작 사례", "url": "https://blog.designpunch.co.kr/namviet", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "컨퍼런스 행사 홈페이지 제작 사례", "url": "https://blog.designpunch.co.kr/litt-fair", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "다국어 회사 홈페이지 제작 사례 블루엘", "url": "https://blog.designpunch.co.kr/bluel", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "모던 컨셉의 건축 인테리어홈페이지제작 사례 오아이건축", "url": "https://blog.designpunch.co.kr/oiarchitects", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "바이오 엔지니어링 기업홈페이지제작 사례 지엘테크", "url": "https://blog.designpunch.co.kr/gltech", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "사회적기업 홈페이지 제작 사례 굿윌스토어", "url": "https://blog.designpunch.co.kr/goodwillstore", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "제조 기업 홈페이지 제작 JSS 제작 사례", "url": "https://blog.designpunch.co.kr/jss", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "미술관 홈페이지 제작 사례 그림손갤러리", "url": "https://blog.designpunch.co.kr/grimson", "keyword": "손 갤러리", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EC%86%90%20%EA%B0%A4%EB%9F%AC%EB%A6%AC", "impressions": 1, "clicks": 0, "ctr": 0.0}, {"blog": "인블로그", "date": "2026-04-15", "dateNum": 20260415, "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유", "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons", "keyword": "다국어 홈페이지 제작", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EB%8B%A4%EA%B5%AD%EC%96%B4%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%A0%9C%EC%9E%91", "impressions": 1, "clicks": 0, "ctr": 0.0}, {"blog": "인블로그", "date": "2026-04-05", "dateNum": 20260405, "title": "병원 홈페이 제작 사례 더바른치과의원 랜딩페이지", "url": "https://blog.designpunch.co.kr/thebareundental", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-04-04", "dateNum": 20260404, "title": "의료기기 제조업 영문 홈페이지 제작 사례 테바코리아", "url": "https://blog.designpunch.co.kr/tebahkorea", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-03-14", "dateNum": 20260314, "title": "피부미용 레이저 랜딩페이지 제작 사례 헬리오스785", "url": "https://blog.designpunch.co.kr/helios785", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-03-14", "dateNum": 20260314, "title": "기업 홈페이지 제작 사례 제일종합관리", "url": "https://blog.designpunch.co.kr/cheilfms", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-03-08", "dateNum": 20260308, "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines", "keyword": "홈페이지유지보수", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98", "impressions": 33, "clicks": 0, "ctr": 0.0}, {"blog": "인블로그", "date": "2026-03-07", "dateNum": 20260307, "title": "AI 교육 홈페이지 제작 사례 STEAM융합교육센터", "url": "https://blog.designpunch.co.kr/steamedu", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-03-01", "dateNum": 20260301, "title": "홈페이지 제작 꼭 맞춤형으로 해야할까?", "url": "https://blog.designpunch.co.kr/custom-website-development", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-02-28", "dateNum": 20260228, "title": "제조업홈페이지제작 잘 만든 회사들의 공통점", "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features", "keyword": "제조업 홈페이지", "searchUrl": "https://www.google.com/search?hl=ko&gl=kr&q=%EC%A0%9C%EC%A1%B0%EC%97%85%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80", "impressions": 6, "clicks": 0, "ctr": 0.0}, {"blog": "인블로그", "date": "2026-01-09", "dateNum": 20260109, "title": "제조기업 홈페이지 한국알박(Ulvac) 제작 사례", "url": "https://blog.designpunch.co.kr/ulvackorea", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "2026-01-06", "dateNum": 20260106, "title": "정형외과 병원 홈페이지 제작 사례 누셀린클리닉", "url": "https://blog.designpunch.co.kr/nucellin", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "", "dateNum": 0, "title": "- (주)디자인펀치", "url": "https://blog.designpunch.co.kr/author/user-660b977e", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "인블로그", "date": "", "dateNum": 0, "title": "inblog Team", "url": "https://blog.designpunch.co.kr/author/inblog-team-837483", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-19", "dateNum": 20260619, "title": "카페24 쇼핑몰 제작, 시작 전에 확인해야 할 3가지", "url": "https://designpunch.tistory.com/entry/%EC%B9%B4%ED%8E%9824-%EC%87%BC%ED%95%91%EB%AA%B0-%EC%A0%9C%EC%9E%91-%EC%8B%9C%EC%9E%91-%EC%A0%84%EC%97%90-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-18", "dateNum": 20260618, "title": "웹사이트 제작 전에 반드시 정해야 할 4가지 — 에이전시 실무 가이드", "url": "https://designpunch.tistory.com/entry/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%9C%EC%9E%91-%EC%A0%84%EC%97%90-%EB%B0%98%EB%93%9C%EC%8B%9C-%EC%A0%95%ED%95%B4%EC%95%BC-%ED%95%A0-4%EA%B0%80%EC%A7%80-%E2%80%94-%EC%97%90%EC%9D%B4%EC%A0%84%EC%8B%9C-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-17", "dateNum": 20260617, "title": "홈페이지 제작 시 SEO, 처음부터 챙겨야 하는 이유와 핵심 체크리스트", "url": "https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%8B%9C-SEO-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EC%B1%99%EA%B2%A8%EC%95%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%ED%95%B5%EC%8B%AC-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-16", "dateNum": 20260616, "title": "홈페이지 리뉴얼, 지금 해야 하는지 판단하는 5가지 신호", "url": "https://designpunch.tistory.com/entry/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%89%B4%EC%96%BC-%EC%A7%80%EA%B8%88-%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EC%A7%80-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-5%EA%B0%80%EC%A7%80-%EC%8B%A0%ED%98%B8", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-15", "dateNum": 20260615, "title": "기업 홈페이지 제작, 비용보다 먼저 확인해야 할 업체 선택 기준", "url": "https://designpunch.tistory.com/entry/%EA%B8%B0%EC%97%85-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-%EC%97%85%EC%B2%B4-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-11", "dateNum": 20260611, "title": "바우처 홈페이지 제작, 정부 지원받고 만드는 방법 총정리", "url": "https://designpunch.tistory.com/entry/%EB%B0%94%EC%9A%B0%EC%B2%98-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%A0%95%EB%B6%80-%EC%A7%80%EC%9B%90%EB%B0%9B%EA%B3%A0-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}, {"blog": "티스토리", "date": "2026-06-10", "dateNum": 20260610, "title": "맞춤형 홈페이지 제작, 비용보다 먼저 확인해야 할 3가지", "url": "https://designpunch.tistory.com/entry/%EB%A7%9E%EC%B6%A4%ED%98%95-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EB%B9%84%EC%9A%A9%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80", "keyword": "", "searchUrl": "", "impressions": 0, "clicks": 0, "ctr": 0}];
+const SNAPS = [{"checked": "2026-06-22", "overall": {"total": 30, "exposed": 5, "impressions": 53, "clicks": 0}, "blogs": {"인블로그": {"total": 23, "exposed": 5, "impressions": 53, "clicks": 0}, "티스토리": {"total": 7, "exposed": 0, "impressions": 0, "clicks": 0}}}];
+let sortKey="impressions", sortDir=-1, page=1, perPage=25, query="", expoOnly=false, blogSel="";
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;");}
 function scoped(){
@@ -120,7 +115,7 @@ function scoped(){
 }
 function filtered(){
   let d=scoped();
-  if(changeOnly){d=d.filter(r=>r.trendCls==="up"||r.trendCls==="down");}
+  if(expoOnly){d=d.filter(r=>r.impressions>0);}
   d.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];
     if(typeof x==="string"){return x.localeCompare(y,"ko")*sortDir;}
     return ((x||0)-(y||0))*sortDir;});
@@ -141,16 +136,14 @@ function seriesFor(blog,metric){
 }
 function updateCards(){
   var base=scoped();
-  var exp=base.filter(function(r){return r.exposed;});
   document.getElementById("c_total").textContent=base.length;
-  document.getElementById("c_exposed").textContent=exp.length;
-  document.getElementById("c_page1").textContent=base.filter(function(r){return r.top10;}).length;
-  var rks=exp.map(function(r){return r.rank;});
-  document.getElementById("c_avg").textContent=rks.length?((rks.reduce(function(a,b){return a+b;},0)/rks.length).toFixed(1)+"위"):"-";
+  document.getElementById("c_exposed").textContent=base.filter(function(r){return r.impressions>0;}).length;
+  document.getElementById("c_impr").textContent=base.reduce(function(a,r){return a+r.impressions;},0);
+  document.getElementById("c_clicks").textContent=base.reduce(function(a,r){return a+r.clicks;},0);
   document.getElementById("sp_total").innerHTML=sparkSvg(seriesFor(blogSel,"total"),"#2563eb");
   document.getElementById("sp_exposed").innerHTML=sparkSvg(seriesFor(blogSel,"exposed"),"#15803d");
-  document.getElementById("sp_page1").innerHTML=sparkSvg(seriesFor(blogSel,"page1"),"#b45309");
-  document.getElementById("sp_avg").innerHTML=sparkSvg(seriesFor(blogSel,"avg"),"#7c3aed");
+  document.getElementById("sp_impr").innerHTML=sparkSvg(seriesFor(blogSel,"impressions"),"#b45309");
+  document.getElementById("sp_clicks").innerHTML=sparkSvg(seriesFor(blogSel,"clicks"),"#7c3aed");
 }
 function render(){
   updateCards();
@@ -161,15 +154,13 @@ function render(){
   const slice=d.slice(start,start+perPage);
   const rowsHtml=slice.map(function(r){
     const title='<a href="'+esc(r.url)+'" target="_blank">'+esc(r.title)+'</a>';
-    const kw=r.exposed?('<a class="kw" href="'+esc(r.searchUrl)+'" target="_blank">'+esc(r.keyword)+'</a>'):('<span class="kw-off">'+esc(r.keyword)+'</span>');
-    let rank;
-    if(!r.exposed){rank='<span class="rank miss">미노출</span>';}
-    else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
-    else{rank='<span class="rank norm">'+r.rank+'위</span>';}
-    const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
-    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td data-label="평균 순위">'+rank+'</td><td class="num" data-label="노출수">'+r.impressions+'</td><td class="num" data-label="클릭수">'+r.clicks+'</td><td data-label="추세">'+tr+'</td></tr>';
+    const kw=r.keyword?('<a class="kw" href="'+esc(r.searchUrl)+'" target="_blank">'+esc(r.keyword)+'</a>'):('<span class="kw-off">-</span>');
+    const imp=r.impressions>0?('<b>'+r.impressions+'</b>'):('<span class="muted0">0</span>');
+    const clk=r.clicks>0?('<b>'+r.clicks+'</b>'):('<span class="muted0">0</span>');
+    const ctr=r.impressions>0?(r.ctr+'%'):('<span class="muted0">-</span>');
+    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td class="num" data-label="노출수">'+imp+'</td><td class="num" data-label="클릭수">'+clk+'</td><td class="num" data-label="클릭률">'+ctr+'</td></tr>';
   }).join("");
-  tb.innerHTML = rowsHtml || ('<tr><td colspan="8" class="empty">'+(changeOnly?'변동 있는 글이 없습니다.':'표시할 데이터가 없습니다. (구글 검색 노출이 쌓이면 표시됩니다)')+'</td></tr>');
+  tb.innerHTML = rowsHtml || ('<tr><td colspan="7" class="empty">'+(expoOnly?'구글 검색에 노출된 글이 아직 없습니다.':'표시할 글이 없습니다.')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 중 "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
   let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
   const win=2;
@@ -193,7 +184,7 @@ document.querySelectorAll("th[data-key]").forEach(function(th){
 document.getElementById("q").addEventListener("input",function(e){query=e.target.value;page=1;render();});
 document.getElementById("per").addEventListener("change",function(e){perPage=parseInt(e.target.value);page=1;render();});
 document.getElementById("blog").addEventListener("change",function(e){blogSel=e.target.value;page=1;render();});
-document.getElementById("chg").addEventListener("change",function(e){changeOnly=e.target.checked;page=1;render();});
+document.getElementById("expo").addEventListener("change",function(e){expoOnly=e.target.checked;page=1;render();});
 render();
 </script>
 </body></html>
