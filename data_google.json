@@ -1,0 +1,151 @@
+{
+  "posts": {
+    "https://blog.designpunch.co.kr/": {
+      "blog": "인블로그",
+      "title": "(주)디자인펀치",
+      "url": "https://blog.designpunch.co.kr/",
+      "keyword": "디자인펀치",
+      "impressions": 13,
+      "clicks": 1,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 1,
+          "impressions": 13,
+          "clicks": 1
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/224209381095": {
+      "blog": "인블로그",
+      "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
+      "url": "https://blog.designpunch.co.kr/224209381095",
+      "keyword": "서비스 유지보수 범위는 어디까지인가요",
+      "impressions": 3,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 5,
+          "impressions": 3,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/export-voucher-website-guide": {
+      "blog": "인블로그",
+      "title": "수출바우처 홈페이지 제작, \n수행기관 고르기 전에 확인할 3가지",
+      "url": "https://blog.designpunch.co.kr/export-voucher-website-guide",
+      "keyword": "홈페이지제작수출바우처",
+      "impressions": 12,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 11.4,
+          "impressions": 12,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/grimson": {
+      "blog": "인블로그",
+      "title": "미술관 홈페이지 제작 사례 그림손갤러리",
+      "url": "https://blog.designpunch.co.kr/grimson",
+      "keyword": "손 갤러리",
+      "impressions": 1,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 8,
+          "impressions": 1,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/kacbs": {
+      "blog": "인블로그",
+      "title": "공공기관 홈페이지 제작 사례 한국아동행동전문가협회",
+      "url": "https://blog.designpunch.co.kr/kacbs",
+      "keyword": "한국아동행동전문가협회",
+      "impressions": 5,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 7.4,
+          "impressions": 5,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/manufacturing-website-common-features": {
+      "blog": "인블로그",
+      "title": "제조업홈페이지제작 잘 만든 회사들의 공통점",
+      "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features",
+      "keyword": "제조업 홈페이지",
+      "impressions": 6,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 12.3,
+          "impressions": 6,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/multilingual-website-localization-reasons": {
+      "blog": "인블로그",
+      "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유",
+      "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons",
+      "keyword": "다국어 홈페이지 제작",
+      "impressions": 1,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 36,
+          "impressions": 1,
+          "clicks": 0
+        }
+      ]
+    },
+    "https://blog.designpunch.co.kr/website-maintenance-guidelines": {
+      "blog": "인블로그",
+      "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
+      "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines",
+      "keyword": "홈페이지유지보수",
+      "impressions": 33,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-22",
+          "rank": 28.2,
+          "impressions": 33,
+          "clicks": 0
+        }
+      ]
+    }
+  },
+  "snapshots": [
+    {
+      "checked": "2026-06-22",
+      "overall": {
+        "total": 8,
+        "exposed": 8,
+        "page1": 4,
+        "avg": 13.7
+      },
+      "blogs": {
+        "인블로그": {
+          "total": 8,
+          "exposed": 8,
+          "page1": 4,
+          "avg": 13.7
+        }
+      }
+    }
+  ]
+}

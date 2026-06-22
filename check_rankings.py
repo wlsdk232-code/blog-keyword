@@ -439,6 +439,7 @@ span.kw-off{color:#b0b6c0;font-size:13px}
 <body><div class="wrap">
 <h1>디자인펀치 블로그 검색순위 리포트</h1>
 <div class="sub">blog.naver.com/giant7000 · 점검일시 __NOW__</div>
+<div style="margin-bottom:20px;font-size:13px"><a href="report-google.html" style="color:#2563eb;text-decoration:none">🔍 인블로그·티스토리 구글 검색노출 리포트 보기 →</a></div>
 <div class="cards">
   <div class="card"><div class="n" id="c_total">__TOTAL__</div><div class="l">점검한 글</div><div class="spark-box" id="sp_total"></div></div>
   <div class="card"><div class="n" id="c_exposed">__EXPOSED__</div><div class="l">상위 100위 노출</div><div class="spark-box" id="sp_exposed"></div></div>
