@@ -1,11 +1,11 @@
 name: 블로그 검색순위 자동 점검
 
 on:
-  schedule:
-    # 매일 00:00 UTC = 한국시간 매일 오전 9시
-    # (cron 순서: 분 시 일 월 요일, 모두 UTC 기준)
-    - cron: "0 0 * * *"
-  workflow_dispatch: {}   # 깃허브 Actions 탭에서 수동 실행도 가능
+  # 실행 트리거는 cron-job.org 에서 매일 한국시간 오전 9시에
+  # workflow_dispatch API 를 호출하여 발생시킵니다.
+  # (GitHub Actions 자체 schedule 은 정시 보장이 안 되고 수십 분~1시간
+  #  지연되는 문제가 있어 제거했습니다. 이중 실행 방지 목적도 있음.)
+  workflow_dispatch: {}   # 외부(cron-job.org) 및 Actions 탭 수동 실행
 
 permissions:
   contents: write
