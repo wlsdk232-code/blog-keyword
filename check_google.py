@@ -200,9 +200,13 @@ def run(args):
         print("  [%s] 글 %d개 (검색 노출 있는 URL 기준)" % (label, len(by_page)))
 
         skipped_old = 0
+        site_root = site.rstrip("/")
         for page, agg in by_page.items():
             top = agg["top"]
             if not top:
+                continue
+            # 블로그 첫(홈)페이지는 개별 포스팅이 아니므로 제외
+            if page.rstrip("/") == site_root:
                 continue
             meta = fetch_meta(page, meta_cache)
             pub = parse_pub_date(meta.get("date", ""))
@@ -312,7 +316,8 @@ def build_row(rec):
         t_label, t_val, t_cls = "-", 0, "same"
 
     kw = rec.get("keyword", "")
-    search_url = "https://www.google.com/search?q=" + urllib.parse.quote(kw)
+    search_url = ("https://www.google.com/search?hl=ko&gl=kr&q="
+                  + urllib.parse.quote(kw))
     # 평균 순위가 2페이지 이상이면 해당 검색결과 페이지로 바로 이동(&start=)
     if cur and cur > 10:
         start_off = int((int(cur) - 1) // 10 * 10)

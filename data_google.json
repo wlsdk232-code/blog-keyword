@@ -1,22 +1,5 @@
 {
   "posts": {
-    "https://blog.designpunch.co.kr/": {
-      "blog": "인블로그",
-      "title": "(주)디자인펀치",
-      "date": "",
-      "url": "https://blog.designpunch.co.kr/",
-      "keyword": "디자인펀치",
-      "impressions": 13,
-      "clicks": 1,
-      "history": [
-        {
-          "checked": "2026-06-22",
-          "rank": 1,
-          "impressions": 13,
-          "clicks": 1
-        }
-      ]
-    },
     "https://blog.designpunch.co.kr/224209381095": {
       "blog": "인블로그",
       "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
@@ -124,17 +107,17 @@
     {
       "checked": "2026-06-22",
       "overall": {
-        "total": 7,
-        "exposed": 7,
-        "page1": 3,
-        "avg": 14.6
+        "total": 6,
+        "exposed": 6,
+        "page1": 2,
+        "avg": 16.8
       },
       "blogs": {
         "인블로그": {
-          "total": 7,
-          "exposed": 7,
-          "page1": 3,
-          "avg": 14.6
+          "total": 6,
+          "exposed": 6,
+          "page1": 2,
+          "avg": 16.8
         }
       }
     }
