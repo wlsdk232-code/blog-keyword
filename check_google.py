@@ -91,36 +91,67 @@ def fetch_rows(svc, site, start, end):
     return rows
 
 
+def months_ago(d, months):
+    y, m = d.year, d.month - months
+    while m <= 0:
+        m += 12
+        y -= 1
+    return datetime.date(y, m, 1)
+
+
+def parse_pub_date(s):
+    nums = re.findall(r"\d+", s or "")
+    if len(nums) >= 3:
+        try:
+            return datetime.date(int(nums[0]), int(nums[1]), int(nums[2]))
+        except ValueError:
+            return None
+    return None
+
+
 def is_noise_query(q):
     """검색어 노이즈 제거: site: 연산자 등 실제 키워드가 아닌 진단성 쿼리."""
     q = (q or "").strip().lower()
     return q.startswith("site:") or q.startswith("inurl:") or q.startswith("cache:")
 
 
-def fetch_title(url, cache):
-    """글 제목을 페이지 <title>에서 가져온다(캐시 사용, 실패 시 URL 경로)."""
-    if url in cache and cache[url]:
-        return cache[url]
-    title = ""
+def fetch_meta(url, cache):
+    """글 페이지에서 제목과 발행일을 가져온다(캐시 사용).
+    반환: {"title": 제목, "date": "YYYY-MM-DD" 또는 ""}"""
+    cached = cache.get(url)
+    if cached and cached.get("title") and cached.get("date") is not None:
+        return cached
+    title, date = "", ""
     try:
         req = urllib.request.Request(url)
         req.add_header("User-Agent", UA)
         with urllib.request.urlopen(req, timeout=15) as resp:
-            data = resp.read(200000).decode("utf-8", "ignore")
+            data = resp.read(300000).decode("utf-8", "ignore")
+        # 제목
         m = re.search(r"<title[^>]*>(.*?)</title>", data, re.I | re.S)
         if m:
             title = html.unescape(m.group(1)).strip()
-            # 흔한 사이트명 꼬리표 정리
             for sep in [" :: ", " :", " | ", " - "]:
                 if sep in title and len(title.split(sep)[0]) >= 4:
                     title = title.split(sep)[0].strip()
                     break
+        # 발행일 (여러 형식 시도)
+        for pat in [r'article:published_time"[^>]*content="([^"]+)"',
+                    r'"datePublished"\s*:\s*"([^"]+)"',
+                    r'property="og:regDate"[^>]*content="([^"]+)"']:
+            dm = re.search(pat, data, re.I)
+            if dm:
+                dnums = re.findall(r"\d+", dm.group(1))
+                if len(dnums) >= 3:
+                    date = "%04d-%02d-%02d" % (int(dnums[0]), int(dnums[1]), int(dnums[2]))
+                break
     except Exception:
         pass
     if not title:
         title = url.rstrip("/").split("/")[-1] or url
-    cache[url] = title
-    return title
+    meta = {"title": title, "date": date}
+    cache[url] = meta
+    return meta
 
 
 def run(args):
@@ -130,6 +161,7 @@ def run(args):
     start = (today - datetime.timedelta(days=args.days)).isoformat()
     end = today.isoformat()
     today_str = today.isoformat()
+    age_cutoff = months_ago(today, args.max_age_months)   # 발행일 필터 기준
 
     # 기존 데이터 로드
     raw = {}
@@ -141,9 +173,12 @@ def run(args):
             raw = {}
     posts_db = raw.get("posts", {}) if isinstance(raw, dict) else {}
     snapshots = raw.get("snapshots", []) if isinstance(raw, dict) else []
-    title_cache = {k: v.get("title", "") for k, v in posts_db.items()}
+    # 캐시: {url: {"title":..., "date":...}}
+    meta_cache = {k: {"title": v.get("title", ""), "date": v.get("date", "")}
+                  for k, v in posts_db.items()}
 
-    print("■ 구글 Search Console 점검 (최근 %d일: %s ~ %s)" % (args.days, start, end))
+    print("■ 구글 Search Console 점검 (지표 최근 %d일 / 발행일 최근 %d개월 글만)"
+          % (args.days, args.max_age_months))
 
     seen_keys = set()
     for site, label in PROPERTIES:
@@ -164,18 +199,25 @@ def run(args):
 
         print("  [%s] 글 %d개 (검색 노출 있는 URL 기준)" % (label, len(by_page)))
 
+        skipped_old = 0
         for page, agg in by_page.items():
             top = agg["top"]
             if not top:
                 continue
+            meta = fetch_meta(page, meta_cache)
+            pub = parse_pub_date(meta.get("date", ""))
+            # 발행일이 6개월보다 오래된 글은 제외 (발행일 모르면 유지)
+            if pub is not None and pub < age_cutoff:
+                skipped_old += 1
+                continue
             key = page
             seen_keys.add(key)
             rank = round(top["pos"], 1)
-            title = fetch_title(page, title_cache)
             rec = posts_db.get(key, {})
             rec.update({
                 "blog": label,
-                "title": title,
+                "title": meta.get("title", ""),
+                "date": meta.get("date", ""),
                 "url": page,
                 "keyword": top["query"],
                 "impressions": agg["impr"],
@@ -187,6 +229,18 @@ def run(args):
                          "impressions": agg["impr"], "clicks": agg["clicks"]})
             rec["history"] = hist[-24:]
             posts_db[key] = rec
+
+        if skipped_old:
+            print("    └ 발행 6개월 초과로 제외: %d개" % skipped_old)
+
+    # 발행일이 6개월 지난 글은 통계에서 정리(제거)
+    before = len(posts_db)
+    posts_db = {k: v for k, v in posts_db.items()
+                if (parse_pub_date(v.get("date", "")) is None)
+                or (parse_pub_date(v.get("date", "")) >= age_cutoff)}
+    purged = before - len(posts_db)
+    if purged:
+        print("  기간 지난 글 %d개 정리" % purged)
 
     # 이번 회차에 노출이 사라진 글: 이력에 '미노출'로 한 줄 기록(추세 '이탈' 판단용)
     for key, rec in posts_db.items():
@@ -230,7 +284,7 @@ def run(args):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump({"posts": posts_db, "snapshots": snapshots}, f, ensure_ascii=False, indent=2)
 
-    generate_html(posts_db, snapshots)
+    generate_html(posts_db, snapshots, days=args.days)
     print("\n완료! report-google.html 갱신됨.")
 
 
@@ -263,8 +317,12 @@ def build_row(rec):
     if cur and cur > 10:
         start_off = int((int(cur) - 1) // 10 * 10)
         search_url += "&start=%d" % start_off
+    d = parse_pub_date(rec.get("date", ""))
+    date_num = (d.year * 10000 + d.month * 100 + d.day) if d else 0
     return {
         "blog": rec.get("blog", ""),
+        "date": rec.get("date", ""),
+        "dateNum": date_num,
         "title": rec.get("title", ""),
         "url": rec.get("url", ""),
         "keyword": kw,
@@ -310,6 +368,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
 th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
+td.date{white-space:nowrap;color:var(--mut);font-size:13px}
 td.blog{color:#6b7280;font-size:13px;white-space:nowrap}
 td.title a{color:#111827;text-decoration:none}
 td.title a:hover{text-decoration:underline}
@@ -370,6 +429,7 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 </div>
 <table>
 <thead><tr>
+  <th data-key="dateNum" data-type="num">작성일<span class="ar"></span></th>
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
   <th data-key="blog" data-type="str">블로그<span class="ar"></span></th>
   <th data-key="keyword" data-type="str">대표 검색어<span class="ar"></span></th>
@@ -383,7 +443,8 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 <div class="note">
 ※ 본 데이터는 구글 <b>Search Console</b> 기준이며, 실제 사람들이 검색해 내 글이 노출된 검색어/순위입니다. 데이터는 보통 2~3일 지연됩니다.<br>
 ※ '대표 검색어'는 해당 글이 가장 많이 노출된 검색어 1개이며, '평균 순위'는 그 검색어에서의 구글 평균 노출 순위입니다.<br>
-※ 검색어를 클릭하면 구글 검색결과로 이동합니다. 최근 __DAYS__일 데이터를 집계합니다.
+※ 검색어를 클릭하면 해당 순위의 구글 검색결과 페이지로 이동합니다.<br>
+※ 노출수·클릭수·평균순위는 <b>최근 __DAYS__일</b> 기준이며, <b>발행 6개월 이내</b> 글만 표시합니다.
 </div>
 </div>
 <script>
@@ -447,9 +508,9 @@ function render(){
     else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
     else{rank='<span class="rank norm">'+r.rank+'위</span>';}
     const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
-    return '<tr><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td data-label="평균 순위">'+rank+'</td><td class="num" data-label="노출수">'+r.impressions+'</td><td class="num" data-label="클릭수">'+r.clicks+'</td><td data-label="추세">'+tr+'</td></tr>';
+    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td data-label="평균 순위">'+rank+'</td><td class="num" data-label="노출수">'+r.impressions+'</td><td class="num" data-label="클릭수">'+r.clicks+'</td><td data-label="추세">'+tr+'</td></tr>';
   }).join("");
-  tb.innerHTML = rowsHtml || ('<tr><td colspan="7" class="empty">'+(changeOnly?'변동 있는 글이 없습니다.':'표시할 데이터가 없습니다. (구글 검색 노출이 쌓이면 표시됩니다)')+'</td></tr>');
+  tb.innerHTML = rowsHtml || ('<tr><td colspan="8" class="empty">'+(changeOnly?'변동 있는 글이 없습니다.':'표시할 데이터가 없습니다. (구글 검색 노출이 쌓이면 표시됩니다)')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 중 "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
   let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
   const win=2;
@@ -479,7 +540,7 @@ render();
 </body></html>"""
 
 
-def generate_html(data, snapshots=None):
+def generate_html(data, snapshots=None, days=30):
     snapshots = snapshots or []
     rows = [build_row(r) for r in data.values()]
     total = len(rows)
@@ -495,7 +556,7 @@ def generate_html(data, snapshots=None):
 
     page = (HTML_TEMPLATE
             .replace("__NOW__", now)
-            .replace("__DAYS__", "180")
+            .replace("__DAYS__", str(days))
             .replace("__BLOG_OPTIONS__", blog_opts)
             .replace("__TOTAL__", str(total))
             .replace("__EXPOSED__", str(exposed))
@@ -510,7 +571,10 @@ def generate_html(data, snapshots=None):
 
 def main():
     ap = argparse.ArgumentParser(description="구글 Search Console 검색노출 점검")
-    ap.add_argument("--days", type=int, default=180, help="최근 N일 데이터 집계 (기본 180)")
+    ap.add_argument("--days", type=int, default=30,
+                    help="지표(노출/클릭/순위) 집계 기간, 최근 N일 (기본 30)")
+    ap.add_argument("--max-age-months", type=int, default=6,
+                    help="발행일 기준 최근 N개월 이내 글만 포함 (기본 6)")
     run(ap.parse_args())
 
 

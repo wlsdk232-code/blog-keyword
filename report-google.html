@@ -27,6 +27,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
 th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
+td.date{white-space:nowrap;color:var(--mut);font-size:13px}
 td.blog{color:#6b7280;font-size:13px;white-space:nowrap}
 td.title a{color:#111827;text-decoration:none}
 td.title a:hover{text-decoration:underline}
@@ -70,13 +71,13 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 </style></head>
 <body><div class="wrap">
 <h1>디자인펀치 구글 검색노출 리포트</h1>
-<div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 2026-06-22 11:51</div>
+<div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 2026-06-22 11:56</div>
 <div class="nav">📊 <a href="report.html">네이버 블로그 검색순위 리포트 보기 →</a></div>
 <div class="cards">
-  <div class="card"><div class="n" id="c_total">8</div><div class="l">노출된 글</div><div class="spark-box" id="sp_total"></div></div>
-  <div class="card"><div class="n" id="c_exposed">8</div><div class="l">검색 노출 글</div><div class="spark-box" id="sp_exposed"></div></div>
-  <div class="card"><div class="n" id="c_page1">4</div><div class="l">1페이지(10위 내)</div><div class="spark-box" id="sp_page1"></div></div>
-  <div class="card"><div class="n" id="c_avg">13.7위</div><div class="l">평균 순위</div><div class="spark-box" id="sp_avg"></div></div>
+  <div class="card"><div class="n" id="c_total">7</div><div class="l">노출된 글</div><div class="spark-box" id="sp_total"></div></div>
+  <div class="card"><div class="n" id="c_exposed">7</div><div class="l">검색 노출 글</div><div class="spark-box" id="sp_exposed"></div></div>
+  <div class="card"><div class="n" id="c_page1">3</div><div class="l">1페이지(10위 내)</div><div class="spark-box" id="sp_page1"></div></div>
+  <div class="card"><div class="n" id="c_avg">14.6위</div><div class="l">평균 순위</div><div class="spark-box" id="sp_avg"></div></div>
 </div>
 <div class="bar">
   <input id="q" type="text" placeholder="제목·검색어 검색">
@@ -87,6 +88,7 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 </div>
 <table>
 <thead><tr>
+  <th data-key="dateNum" data-type="num">작성일<span class="ar"></span></th>
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
   <th data-key="blog" data-type="str">블로그<span class="ar"></span></th>
   <th data-key="keyword" data-type="str">대표 검색어<span class="ar"></span></th>
@@ -100,12 +102,13 @@ td.num{text-align:right;color:#374151;font-size:13px;white-space:nowrap}
 <div class="note">
 ※ 본 데이터는 구글 <b>Search Console</b> 기준이며, 실제 사람들이 검색해 내 글이 노출된 검색어/순위입니다. 데이터는 보통 2~3일 지연됩니다.<br>
 ※ '대표 검색어'는 해당 글이 가장 많이 노출된 검색어 1개이며, '평균 순위'는 그 검색어에서의 구글 평균 노출 순위입니다.<br>
-※ 검색어를 클릭하면 구글 검색결과로 이동합니다. 최근 180일 데이터를 집계합니다.
+※ 검색어를 클릭하면 해당 순위의 구글 검색결과 페이지로 이동합니다.<br>
+※ 노출수·클릭수·평균순위는 <b>최근 30일</b> 기준이며, <b>발행 6개월 이내</b> 글만 표시합니다.
 </div>
 </div>
 <script>
-const DATA = [{"blog": "인블로그", "title": "(주)디자인펀치", "url": "https://blog.designpunch.co.kr/", "keyword": "디자인펀치", "searchUrl": "https://www.google.com/search?q=%EB%94%94%EC%9E%90%EC%9D%B8%ED%8E%80%EC%B9%98", "rank": 1, "rankSort": 1, "impressions": 13, "clicks": 1, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/224209381095", "keyword": "서비스 유지보수 범위는 어디까지인가요", "searchUrl": "https://www.google.com/search?q=%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%20%EB%B2%94%EC%9C%84%EB%8A%94%20%EC%96%B4%EB%94%94%EA%B9%8C%EC%A7%80%EC%9D%B8%EA%B0%80%EC%9A%94", "rank": 5, "rankSort": 5, "impressions": 3, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "수출바우처 홈페이지 제작, \n수행기관 고르기 전에 확인할 3가지", "url": "https://blog.designpunch.co.kr/export-voucher-website-guide", "keyword": "홈페이지제작수출바우처", "searchUrl": "https://www.google.com/search?q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%A0%9C%EC%9E%91%EC%88%98%EC%B6%9C%EB%B0%94%EC%9A%B0%EC%B2%98&start=10", "rank": 11.4, "rankSort": 11.4, "impressions": 12, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "미술관 홈페이지 제작 사례 그림손갤러리", "url": "https://blog.designpunch.co.kr/grimson", "keyword": "손 갤러리", "searchUrl": "https://www.google.com/search?q=%EC%86%90%20%EA%B0%A4%EB%9F%AC%EB%A6%AC", "rank": 8, "rankSort": 8, "impressions": 1, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "공공기관 홈페이지 제작 사례 한국아동행동전문가협회", "url": "https://blog.designpunch.co.kr/kacbs", "keyword": "한국아동행동전문가협회", "searchUrl": "https://www.google.com/search?q=%ED%95%9C%EA%B5%AD%EC%95%84%EB%8F%99%ED%96%89%EB%8F%99%EC%A0%84%EB%AC%B8%EA%B0%80%ED%98%91%ED%9A%8C", "rank": 7.4, "rankSort": 7.4, "impressions": 5, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "제조업홈페이지제작 잘 만든 회사들의 공통점", "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features", "keyword": "제조업 홈페이지", "searchUrl": "https://www.google.com/search?q=%EC%A0%9C%EC%A1%B0%EC%97%85%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80&start=10", "rank": 12.3, "rankSort": 12.3, "impressions": 6, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유", "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons", "keyword": "다국어 홈페이지 제작", "searchUrl": "https://www.google.com/search?q=%EB%8B%A4%EA%B5%AD%EC%96%B4%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%A0%9C%EC%9E%91&start=30", "rank": 36, "rankSort": 36, "impressions": 1, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines", "keyword": "홈페이지유지보수", "searchUrl": "https://www.google.com/search?q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98&start=20", "rank": 28.2, "rankSort": 28.2, "impressions": 33, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}];
-const SNAPS = [{"checked": "2026-06-22", "overall": {"total": 8, "exposed": 8, "page1": 4, "avg": 13.7}, "blogs": {"인블로그": {"total": 8, "exposed": 8, "page1": 4, "avg": 13.7}}}];
+const DATA = [{"blog": "인블로그", "date": "", "dateNum": 0, "title": "(주)디자인펀치", "url": "https://blog.designpunch.co.kr/", "keyword": "디자인펀치", "searchUrl": "https://www.google.com/search?q=%EB%94%94%EC%9E%90%EC%9D%B8%ED%8E%80%EC%B9%98", "rank": 1, "rankSort": 1, "impressions": 13, "clicks": 1, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-03-08", "dateNum": 20260308, "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/224209381095", "keyword": "서비스 유지보수 범위는 어디까지인가요", "searchUrl": "https://www.google.com/search?q=%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%20%EB%B2%94%EC%9C%84%EB%8A%94%20%EC%96%B4%EB%94%94%EA%B9%8C%EC%A7%80%EC%9D%B8%EA%B0%80%EC%9A%94", "rank": 5, "rankSort": 5, "impressions": 3, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-06-08", "dateNum": 20260608, "title": "수출바우처 홈페이지 제작, \n수행기관 고르기 전에 확인할 3가지", "url": "https://blog.designpunch.co.kr/export-voucher-website-guide", "keyword": "홈페이지제작수출바우처", "searchUrl": "https://www.google.com/search?q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%A0%9C%EC%9E%91%EC%88%98%EC%B6%9C%EB%B0%94%EC%9A%B0%EC%B2%98&start=10", "rank": 11.4, "rankSort": 11.4, "impressions": 12, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-04-29", "dateNum": 20260429, "title": "미술관 홈페이지 제작 사례 그림손갤러리", "url": "https://blog.designpunch.co.kr/grimson", "keyword": "손 갤러리", "searchUrl": "https://www.google.com/search?q=%EC%86%90%20%EA%B0%A4%EB%9F%AC%EB%A6%AC", "rank": 8, "rankSort": 8, "impressions": 1, "clicks": 0, "exposed": true, "top10": true, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-02-28", "dateNum": 20260228, "title": "제조업홈페이지제작 잘 만든 회사들의 공통점", "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features", "keyword": "제조업 홈페이지", "searchUrl": "https://www.google.com/search?q=%EC%A0%9C%EC%A1%B0%EC%97%85%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80&start=10", "rank": 12.3, "rankSort": 12.3, "impressions": 6, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-04-15", "dateNum": 20260415, "title": "다국어홈페이지제작 단순 번역으로 끝내면 안 되는 이유", "url": "https://blog.designpunch.co.kr/multilingual-website-localization-reasons", "keyword": "다국어 홈페이지 제작", "searchUrl": "https://www.google.com/search?q=%EB%8B%A4%EA%B5%AD%EC%96%B4%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%A0%9C%EC%9E%91&start=30", "rank": 36, "rankSort": 36, "impressions": 1, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}, {"blog": "인블로그", "date": "2026-03-08", "dateNum": 20260308, "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리", "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines", "keyword": "홈페이지유지보수", "searchUrl": "https://www.google.com/search?q=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98&start=20", "rank": 28.2, "rankSort": 28.2, "impressions": 33, "clicks": 0, "exposed": true, "top10": false, "trendLabel": "NEW", "trendVal": -100000, "trendCls": "new"}];
+const SNAPS = [{"checked": "2026-06-22", "overall": {"total": 7, "exposed": 7, "page1": 3, "avg": 14.6}, "blogs": {"인블로그": {"total": 7, "exposed": 7, "page1": 3, "avg": 14.6}}}];
 let sortKey="impressions", sortDir=-1, page=1, perPage=25, query="", changeOnly=false, blogSel="";
 const tb=document.getElementById("tb"), pg=document.getElementById("pg"), cnt=document.getElementById("cnt");
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;");}
@@ -164,9 +167,9 @@ function render(){
     else if(r.top10){rank='<span class="badge-top">'+r.rank+'위</span>';}
     else{rank='<span class="rank norm">'+r.rank+'위</span>';}
     const tr='<span class="t-'+r.trendCls+'">'+esc(r.trendLabel)+'</span>';
-    return '<tr><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td data-label="평균 순위">'+rank+'</td><td class="num" data-label="노출수">'+r.impressions+'</td><td class="num" data-label="클릭수">'+r.clicks+'</td><td data-label="추세">'+tr+'</td></tr>';
+    return '<tr><td class="date" data-label="작성일">'+esc(r.date)+'</td><td class="title" data-label="글 제목">'+title+'</td><td class="blog" data-label="블로그">'+esc(r.blog)+'</td><td data-label="대표 검색어">'+kw+'</td><td data-label="평균 순위">'+rank+'</td><td class="num" data-label="노출수">'+r.impressions+'</td><td class="num" data-label="클릭수">'+r.clicks+'</td><td data-label="추세">'+tr+'</td></tr>';
   }).join("");
-  tb.innerHTML = rowsHtml || ('<tr><td colspan="7" class="empty">'+(changeOnly?'변동 있는 글이 없습니다.':'표시할 데이터가 없습니다. (구글 검색 노출이 쌓이면 표시됩니다)')+'</td></tr>');
+  tb.innerHTML = rowsHtml || ('<tr><td colspan="8" class="empty">'+(changeOnly?'변동 있는 글이 없습니다.':'표시할 데이터가 없습니다. (구글 검색 노출이 쌓이면 표시됩니다)')+'</td></tr>');
   cnt.textContent="총 "+d.length+"개 중 "+(d.length?(start+1):0)+"-"+Math.min(start+perPage,d.length)+" 표시";
   let hh='<button '+(page<=1?'disabled':'')+' data-p="'+(page-1)+'">이전</button>';
   const win=2;
