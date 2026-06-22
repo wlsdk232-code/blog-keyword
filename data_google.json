@@ -336,38 +336,6 @@
         }
       ]
     },
-    "인블로그|https://blog.designpunch.co.kr/author/user-660b977e": {
-      "blog": "인블로그",
-      "title": "- (주)디자인펀치",
-      "url": "https://blog.designpunch.co.kr/author/user-660b977e",
-      "date": "",
-      "keyword": "",
-      "impressions": 0,
-      "clicks": 0,
-      "history": [
-        {
-          "checked": "2026-06-22",
-          "impressions": 0,
-          "clicks": 0
-        }
-      ]
-    },
-    "인블로그|https://blog.designpunch.co.kr/author/inblog-team-837483": {
-      "blog": "인블로그",
-      "title": "inblog Team",
-      "url": "https://blog.designpunch.co.kr/author/inblog-team-837483",
-      "date": "",
-      "keyword": "",
-      "impressions": 0,
-      "clicks": 0,
-      "history": [
-        {
-          "checked": "2026-06-22",
-          "impressions": 0,
-          "clicks": 0
-        }
-      ]
-    },
     "티스토리|https://designpunch.tistory.com/entry/%EC%B9%B4%ED%8E%9824-%EC%87%BC%ED%95%91%EB%AA%B0-%EC%A0%9C%EC%9E%91-%EC%8B%9C%EC%9E%91-%EC%A0%84%EC%97%90-%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80": {
       "blog": "티스토리",
       "title": "카페24 쇼핑몰 제작, 시작 전에 확인해야 할 3가지",
@@ -485,14 +453,14 @@
     {
       "checked": "2026-06-22",
       "overall": {
-        "total": 30,
+        "total": 28,
         "exposed": 5,
         "impressions": 53,
         "clicks": 0
       },
       "blogs": {
         "인블로그": {
-          "total": 23,
+          "total": 21,
           "exposed": 5,
           "impressions": 53,
           "clicks": 0

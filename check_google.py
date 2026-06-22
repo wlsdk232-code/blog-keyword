@@ -92,7 +92,8 @@ def is_post_url(base, url):
     if norm_url(url) == norm_url(base):
         return False
     low = url.lower()
-    if any(x in low for x in ["/category", "/tag", "/guestbook", "/notice", "/m/"]):
+    if any(x in low for x in ["/category", "/tag", "/guestbook", "/notice",
+                              "/m/", "/author/", "/author"]):
         return False
     if "tistory.com" in base:
         return "/entry/" in url      # 티스토리는 /entry/ 만 글
