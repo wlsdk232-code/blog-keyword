@@ -259,6 +259,10 @@ def build_row(rec):
 
     kw = rec.get("keyword", "")
     search_url = "https://www.google.com/search?q=" + urllib.parse.quote(kw)
+    # 평균 순위가 2페이지 이상이면 해당 검색결과 페이지로 바로 이동(&start=)
+    if cur and cur > 10:
+        start_off = int((int(cur) - 1) // 10 * 10)
+        search_url += "&start=%d" % start_off
     return {
         "blog": rec.get("blog", ""),
         "title": rec.get("title", ""),
