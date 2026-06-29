@@ -417,7 +417,7 @@ td.num b{font-weight:700}
 <body><div class="wrap">
 <h1>디자인펀치 구글 검색노출 리포트</h1>
 <div class="sub">인블로그 · 티스토리 (구글 Search Console 기준) · 점검일시 __NOW__</div>
-<div class="nav">📊 <a href="report.html">네이버 블로그 검색순위 리포트 보기 →</a></div>
+<div class="nav">📊 <a href="report.html">네이버 검색순위</a> · <a href="report-visitors.html">인블로그 방문자(GA4)</a></div>
 <div class="cards">
   <div class="card"><div class="n" id="c_total">__TOTAL__</div><div class="l">전체 글</div><div class="spark-box" id="sp_total"></div></div>
   <div class="card"><div class="n" id="c_exposed">__EXPOSED__</div><div class="l">노출된 글</div><div class="spark-box" id="sp_exposed"></div></div>

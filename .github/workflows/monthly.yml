@@ -23,7 +23,7 @@ jobs:
           python-version: "3.11"
 
       - name: 구글 API 라이브러리 설치
-        run: pip install google-api-python-client google-auth
+        run: pip install google-api-python-client google-auth google-analytics-data
 
       - name: 네이버 순위 점검 (최근 6개월 글, 변동 추적 + 오래된 글 정리)
         env:
@@ -36,10 +36,15 @@ jobs:
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: python check_google.py --days 30 --max-age-months 0
 
+      - name: 인블로그 방문자 점검 (GA4, 최근 28일)
+        env:
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+        run: python check_ga.py --days 28
+
       - name: 결과 저장(커밋)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json report.html data_google.json report-google.html
+          git add data.json report.html data_google.json report-google.html data_ga.json report-visitors.html
           git commit -m "자동 순위 점검 $(date +%Y-%m-%d)" || echo "변경 사항 없음"
           git push
