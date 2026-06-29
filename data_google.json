@@ -1,5 +1,21 @@
 {
   "posts": {
+    "인블로그|https://blog.designpunch.co.kr/online-marketing-first-website": {
+      "blog": "인블로그",
+      "title": "마케팅을 시작하려는데홈페이지가 없다면? 온라인 마케팅의 첫 번째 조건",
+      "url": "https://blog.designpunch.co.kr/online-marketing-first-website",
+      "date": "2026-06-29",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-06-29",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
     "인블로그|https://blog.designpunch.co.kr/landing-page-conversion-rate-structure-issues": {
       "blog": "인블로그",
       "title": "랜딩페이지 전환율이 낮은 건, 광고 문제가 아닙니다.",
@@ -1572,14 +1588,14 @@
     {
       "checked": "2026-06-29",
       "overall": {
-        "total": 74,
+        "total": 75,
         "exposed": 6,
         "impressions": 95,
         "clicks": 0
       },
       "blogs": {
         "인블로그": {
-          "total": 67,
+          "total": 68,
           "exposed": 6,
           "impressions": 95,
           "clicks": 0

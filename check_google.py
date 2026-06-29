@@ -375,6 +375,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
 th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
+.tip{display:inline-block;margin-left:4px;width:14px;height:14px;line-height:14px;text-align:center;border-radius:50%;background:#cbd5e1;color:#fff;font-size:10px;cursor:help;font-weight:400;vertical-align:middle}
 td.date{white-space:nowrap;color:var(--mut);font-size:13px}
 td.blog{color:#6b7280;font-size:13px;white-space:nowrap}
 td.title a{color:#111827;text-decoration:none}
@@ -437,9 +438,9 @@ td.num b{font-weight:700}
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
   <th data-key="blog" data-type="str">블로그<span class="ar"></span></th>
   <th data-key="keyword" data-type="str">대표 검색어<span class="ar"></span></th>
-  <th data-key="impressions" data-type="num">노출수<span class="ar"></span></th>
-  <th data-key="clicks" data-type="num">클릭수<span class="ar"></span></th>
-  <th data-key="ctr" data-type="num">클릭률<span class="ar"></span></th>
+  <th data-key="impressions" data-type="num">노출수<span class="tip" title="구글 검색결과에서 사용자가 실제로 본 화면에 내 글이 표시된 횟수입니다. (뒷페이지에 있어도 그 페이지를 봐야 집계)">i</span><span class="ar"></span></th>
+  <th data-key="clicks" data-type="num">클릭수<span class="tip" title="검색결과에서 내 글을 클릭해 방문한 횟수입니다.">i</span><span class="ar"></span></th>
+  <th data-key="ctr" data-type="num">클릭률<span class="tip" title="클릭수 ÷ 노출수. 노출 대비 클릭으로 이어진 비율입니다.">i</span><span class="ar"></span></th>
 </tr></thead>
 <tbody id="tb"></tbody></table>
 <div class="pg" id="pg"></div>

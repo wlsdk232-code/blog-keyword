@@ -191,6 +191,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px;vertical-align:middle}
 th{background:#f1f5f9;font-size:13px;color:#374151;cursor:pointer;user-select:none;white-space:nowrap}
 th .ar{color:#9ca3af;font-size:11px;margin-left:3px}
+.tip{display:inline-block;margin-left:4px;width:14px;height:14px;line-height:14px;text-align:center;border-radius:50%;background:#cbd5e1;color:#fff;font-size:10px;cursor:help;font-weight:400;vertical-align:middle}
 td.date{white-space:nowrap;color:var(--mut);font-size:13px}
 td.title a{color:#111827;text-decoration:none}
 td.title a:hover{text-decoration:underline}
@@ -241,8 +242,8 @@ __BANNER__
 <thead><tr>
   <th data-key="dateNum" data-type="num">작성일<span class="ar"></span></th>
   <th data-key="title" data-type="str">글 제목<span class="ar"></span></th>
-  <th data-key="users" data-type="num">방문자수<span class="ar"></span></th>
-  <th data-key="views" data-type="num">조회수<span class="ar"></span></th>
+  <th data-key="users" data-type="num">방문자수<span class="tip" title="글에 들어온 실제 사람 수입니다. 한 사람이 여러 번 봐도 1명으로 셉니다. (모든 유입 합산)">i</span><span class="ar"></span></th>
+  <th data-key="views" data-type="num">조회수<span class="tip" title="글이 열린 총 횟수입니다. 한 사람이 여러 번 보면 각각 셉니다.">i</span><span class="ar"></span></th>
 </tr></thead>
 <tbody id="tb"></tbody></table>
 <div class="pg" id="pg"></div>
