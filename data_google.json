@@ -23,6 +23,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -72,6 +77,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -138,6 +148,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -229,6 +244,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -350,6 +370,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -483,6 +508,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -495,11 +525,6 @@
       "impressions": 1,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -642,6 +667,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 1,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 1,
           "clicks": 0
         }
@@ -657,11 +687,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -803,6 +828,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -818,11 +848,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -964,6 +989,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -979,11 +1009,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -1127,6 +1152,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -1139,11 +1169,6 @@
       "impressions": 21,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 22,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 24,
@@ -1288,6 +1313,11 @@
           "checked": "2026-07-31",
           "impressions": 21,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 21,
+          "clicks": 0
         }
       ]
     },
@@ -1300,11 +1330,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -1447,6 +1472,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -1462,11 +1492,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -1608,6 +1633,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -1623,11 +1653,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -1769,6 +1794,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -1784,11 +1814,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -1930,6 +1955,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -1945,11 +1975,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -2091,6 +2116,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -2106,11 +2136,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -2252,6 +2277,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -2267,11 +2297,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -2415,6 +2440,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -2424,14 +2454,9 @@
       "url": "https://blog.designpunch.co.kr/grimson",
       "date": "2026-04-29",
       "keyword": "손 갤러리",
-      "impressions": 12,
+      "impressions": 10,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 2,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 2,
@@ -2576,6 +2601,11 @@
           "checked": "2026-07-31",
           "impressions": 12,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 10,
+          "clicks": 0
         }
       ]
     },
@@ -2588,11 +2618,6 @@
       "impressions": 3,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 1,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 1,
@@ -2737,6 +2762,11 @@
           "checked": "2026-07-31",
           "impressions": 3,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 3,
+          "clicks": 0
         }
       ]
     },
@@ -2749,11 +2779,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -2896,6 +2921,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -2911,11 +2941,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -3057,6 +3082,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -3072,11 +3102,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -3218,6 +3243,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -3233,11 +3263,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -3381,6 +3406,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -3393,11 +3423,6 @@
       "impressions": 87,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 48,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 48,
@@ -3542,6 +3567,11 @@
           "checked": "2026-07-31",
           "impressions": 87,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 87,
+          "clicks": 0
         }
       ]
     },
@@ -3554,11 +3584,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -3701,6 +3726,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -3716,11 +3746,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -3864,6 +3889,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -3873,14 +3903,9 @@
       "url": "https://blog.designpunch.co.kr/manufacturing-website-common-features",
       "date": "2026-02-28",
       "keyword": "제조업 홈페이지",
-      "impressions": 39,
+      "impressions": 37,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 22,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 23,
@@ -4025,6 +4050,11 @@
           "checked": "2026-07-31",
           "impressions": 39,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 37,
+          "clicks": 0
         }
       ]
     },
@@ -4037,11 +4067,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -4184,6 +4209,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -4199,11 +4229,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -4345,6 +4370,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -4360,11 +4390,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -4508,6 +4533,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -4517,14 +4547,9 @@
       "url": "https://blog.designpunch.co.kr/kacbs",
       "date": "2025-10-28",
       "keyword": "한국아동행동전문가협회",
-      "impressions": 5,
+      "impressions": 4,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 11,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 11,
@@ -4669,6 +4694,11 @@
           "checked": "2026-07-31",
           "impressions": 5,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 4,
+          "clicks": 0
         }
       ]
     },
@@ -4681,11 +4711,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -4828,6 +4853,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -4843,11 +4873,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -4989,6 +5014,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5004,11 +5034,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5150,6 +5175,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5165,11 +5195,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5311,6 +5336,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5326,11 +5356,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5472,6 +5497,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5487,11 +5517,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5633,6 +5658,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5648,11 +5678,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5794,6 +5819,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5809,11 +5839,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -5955,6 +5980,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -5970,11 +6000,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6116,6 +6141,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6131,11 +6161,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6277,6 +6302,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6292,11 +6322,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6438,6 +6463,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6453,11 +6483,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6599,6 +6624,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6614,11 +6644,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6760,6 +6785,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6775,11 +6805,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -6921,6 +6946,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -6936,11 +6966,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7082,6 +7107,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7097,11 +7127,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7243,6 +7268,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7258,11 +7288,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7404,6 +7429,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7419,11 +7449,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7565,6 +7590,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7580,11 +7610,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7726,6 +7751,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7741,11 +7771,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -7887,6 +7912,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -7902,11 +7932,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8048,6 +8073,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8063,11 +8093,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8209,6 +8234,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8224,11 +8254,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8370,6 +8395,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8385,11 +8415,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8531,6 +8556,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8546,11 +8576,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8692,6 +8717,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8707,11 +8737,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -8853,6 +8878,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -8868,11 +8898,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9014,6 +9039,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9029,11 +9059,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9175,6 +9200,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9190,11 +9220,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9336,6 +9361,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9351,11 +9381,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9497,6 +9522,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9512,11 +9542,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9658,6 +9683,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9673,11 +9703,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9819,6 +9844,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9834,11 +9864,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -9980,6 +10005,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -9995,11 +10025,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10141,6 +10166,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10156,11 +10186,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10302,6 +10327,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10317,11 +10347,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10463,6 +10488,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10478,11 +10508,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10624,6 +10649,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10639,11 +10669,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10785,6 +10810,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10800,11 +10830,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -10946,6 +10971,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -10961,11 +10991,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -11107,6 +11132,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11122,11 +11152,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -11268,6 +11293,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11283,11 +11313,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -11429,6 +11454,27 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    "티스토리|https://designpunch.tistory.com/entry/%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%98%88%EC%82%B0-%EC%95%88%EC%97%90%EC%84%9C-%ED%9A%A8%EA%B3%BC%EC%A0%81%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B2%95": {
+      "blog": "티스토리",
+      "title": "소상공인 홈페이지 제작, 예산 안에서 효과적으로 만드는 법",
+      "url": "https://designpunch.tistory.com/entry/%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91-%EC%98%88%EC%82%B0-%EC%95%88%EC%97%90%EC%84%9C-%ED%9A%A8%EA%B3%BC%EC%A0%81%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B2%95",
+      "date": "2026-07-31",
+      "keyword": "",
+      "impressions": 0,
+      "clicks": 0,
+      "history": [
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11445,6 +11491,11 @@
       "history": [
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11466,6 +11517,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11492,6 +11548,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11523,6 +11584,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11569,6 +11635,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11620,6 +11691,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11676,6 +11752,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11737,6 +11818,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11803,6 +11889,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11889,6 +11980,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -11980,6 +12076,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12076,6 +12177,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12177,6 +12283,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12293,6 +12404,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12424,6 +12540,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12560,6 +12681,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12711,6 +12837,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -12869,6 +13000,11 @@
           "checked": "2026-07-31",
           "impressions": 0,
           "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
+          "impressions": 0,
+          "clicks": 0
         }
       ]
     },
@@ -12881,11 +13017,6 @@
       "impressions": 0,
       "clicks": 0,
       "history": [
-        {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
         {
           "checked": "2026-07-03",
           "impressions": 0,
@@ -13028,6 +13159,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13043,11 +13179,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13189,6 +13320,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13204,11 +13340,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13350,6 +13481,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13365,11 +13501,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13511,6 +13642,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13526,11 +13662,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13672,6 +13803,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13687,11 +13823,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13833,6 +13964,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -13848,11 +13984,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -13994,6 +14125,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -14009,11 +14145,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -14155,6 +14286,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -14170,11 +14306,6 @@
       "clicks": 0,
       "history": [
         {
-          "checked": "2026-07-02",
-          "impressions": 0,
-          "clicks": 0
-        },
-        {
           "checked": "2026-07-03",
           "impressions": 0,
           "clicks": 0
@@ -14316,6 +14447,11 @@
         },
         {
           "checked": "2026-07-31",
+          "impressions": 0,
+          "clicks": 0
+        },
+        {
+          "checked": "2026-08-01",
           "impressions": 0,
           "clicks": 0
         }
@@ -15099,6 +15235,29 @@
         },
         "티스토리": {
           "total": 27,
+          "exposed": 0,
+          "impressions": 0,
+          "clicks": 0
+        }
+      }
+    },
+    {
+      "checked": "2026-08-01",
+      "overall": {
+        "total": 102,
+        "exposed": 7,
+        "impressions": 163,
+        "clicks": 0
+      },
+      "blogs": {
+        "인블로그": {
+          "total": 74,
+          "exposed": 7,
+          "impressions": 163,
+          "clicks": 0
+        },
+        "티스토리": {
+          "total": 28,
           "exposed": 0,
           "impressions": 0,
           "clicks": 0
