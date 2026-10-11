@@ -57,6 +57,11 @@
           "checked": "2026-10-10",
           "views": 1,
           "users": 1
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 1,
+          "users": 1
         }
       ]
     },
@@ -395,6 +400,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -775,6 +785,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -1180,6 +1195,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -1600,6 +1620,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -2047,6 +2072,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -2058,11 +2088,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
         {
           "checked": "2026-07-14",
           "views": 1,
@@ -2505,6 +2530,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -2519,11 +2549,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -2965,6 +2990,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -2979,11 +3009,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 3,
-          "users": 2
-        },
-        {
           "checked": "2026-07-14",
           "views": 3,
           "users": 2
@@ -3425,6 +3450,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -3439,11 +3469,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -3885,6 +3910,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -3899,11 +3929,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -4345,6 +4370,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -4359,11 +4389,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -4807,6 +4832,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -4818,11 +4848,6 @@
       "views": 3,
       "users": 3,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
         {
           "checked": "2026-07-14",
           "views": 1,
@@ -5267,6 +5292,11 @@
           "checked": "2026-10-10",
           "views": 3,
           "users": 3
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 3,
+          "users": 3
         }
       ]
     },
@@ -5278,11 +5308,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -5725,6 +5750,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -5739,11 +5769,6 @@
       "users": 2,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -6185,6 +6210,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 3,
+          "users": 2
+        },
+        {
+          "checked": "2026-10-11",
           "views": 3,
           "users": 2
         }
@@ -6199,11 +6229,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -6645,6 +6670,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -6659,11 +6689,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -7105,6 +7130,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -7119,11 +7149,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -7565,6 +7590,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -7579,11 +7609,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -8025,6 +8050,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -8039,11 +8069,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -8485,6 +8510,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -8499,11 +8529,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -8947,6 +8972,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -8958,11 +8988,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
         {
           "checked": "2026-07-14",
           "views": 1,
@@ -9407,6 +9432,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -9418,11 +9448,6 @@
       "views": 1,
       "users": 1,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -9865,6 +9890,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -9879,11 +9909,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -10325,6 +10350,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -10339,11 +10369,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -10785,6 +10810,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -10799,11 +10829,6 @@
       "users": 2,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -11245,6 +11270,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 2,
+          "users": 2
+        },
+        {
+          "checked": "2026-10-11",
           "views": 2,
           "users": 2
         }
@@ -11255,14 +11285,9 @@
       "title": "홈페이지 유지보수란? 수정 범위와 추가 비용 기준 정리",
       "url": "https://blog.designpunch.co.kr/website-maintenance-guidelines",
       "date": "2026-03-08",
-      "views": 2,
-      "users": 2,
+      "views": 3,
+      "users": 3,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 5,
-          "users": 2
-        },
         {
           "checked": "2026-07-14",
           "views": 5,
@@ -11707,6 +11732,11 @@
           "checked": "2026-10-10",
           "views": 2,
           "users": 2
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 3,
+          "users": 3
         }
       ]
     },
@@ -11715,14 +11745,9 @@
       "title": "AI 교육 홈페이지 제작 사례 STEAM융합교육센터",
       "url": "https://blog.designpunch.co.kr/steamedu",
       "date": "2026-03-07",
-      "views": 0,
-      "users": 0,
+      "views": 2,
+      "users": 1,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -12167,6 +12192,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 2,
+          "users": 1
         }
       ]
     },
@@ -12179,11 +12209,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -12625,6 +12650,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -12639,11 +12669,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -13085,6 +13110,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -13099,11 +13129,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -13545,6 +13570,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -13559,11 +13589,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -14005,6 +14030,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -14019,11 +14049,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -14465,6 +14490,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -14479,11 +14509,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -14925,6 +14950,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -14939,11 +14969,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -15385,6 +15410,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -15399,11 +15429,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -15845,6 +15870,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -15859,11 +15889,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -16305,6 +16330,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -16319,11 +16349,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -16765,6 +16790,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -16779,11 +16809,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -17225,6 +17250,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -17239,11 +17269,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -17685,6 +17710,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -17699,11 +17729,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -18145,6 +18170,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -18159,11 +18189,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -18605,6 +18630,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -18619,11 +18649,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -19065,6 +19090,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -19079,11 +19109,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -19525,6 +19550,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -19539,11 +19569,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -19985,6 +20010,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -19999,11 +20029,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -20445,6 +20470,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -20459,11 +20489,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -20905,6 +20930,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -20919,11 +20949,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -21365,6 +21390,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -21379,11 +21409,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -21825,6 +21850,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -21839,11 +21869,6 @@
       "users": 1,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -22285,6 +22310,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 1,
+          "users": 1
+        },
+        {
+          "checked": "2026-10-11",
           "views": 1,
           "users": 1
         }
@@ -22299,11 +22329,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -22745,6 +22770,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -22759,11 +22789,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -23205,6 +23230,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -23219,11 +23249,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -23665,6 +23690,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -23679,11 +23709,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -24125,6 +24150,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -24139,11 +24169,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -24585,6 +24610,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -24599,11 +24629,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -25045,6 +25070,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -25059,11 +25089,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -25505,6 +25530,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -25519,11 +25549,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -25965,6 +25990,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -25979,11 +26009,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -26425,6 +26450,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -26439,11 +26469,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -26885,6 +26910,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -26899,11 +26929,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 1,
-          "users": 1
-        },
-        {
           "checked": "2026-07-14",
           "views": 1,
           "users": 1
@@ -27345,6 +27370,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -27359,11 +27389,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -27805,6 +27830,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -27819,11 +27849,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -28265,6 +28290,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -28279,11 +28309,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -28725,6 +28750,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -28739,11 +28769,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -29185,6 +29210,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -29199,11 +29229,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -29645,6 +29670,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -29659,11 +29689,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -30105,6 +30130,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -30119,11 +30149,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -30565,6 +30590,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -30579,11 +30609,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -31025,6 +31050,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -31039,11 +31069,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -31485,6 +31510,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -31499,11 +31529,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -31945,6 +31970,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -31959,11 +31989,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -32407,6 +32432,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -32418,11 +32448,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -32867,6 +32892,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -32878,11 +32908,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -33325,6 +33350,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -33339,11 +33369,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -33785,6 +33810,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -33799,11 +33829,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -34245,6 +34270,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -34265,6 +34295,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -34575,6 +34610,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -34890,6 +34930,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -35220,6 +35265,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -35555,6 +35605,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -35895,6 +35950,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -36240,6 +36300,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -36590,6 +36655,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -36955,6 +37025,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -37325,6 +37400,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -37700,6 +37780,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -38080,6 +38165,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -38465,6 +38555,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -38865,6 +38960,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -39270,6 +39370,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -39680,6 +39785,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -40095,6 +40205,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -40515,6 +40630,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -40955,6 +41075,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -41400,6 +41525,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -41850,6 +41980,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -42307,6 +42442,11 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     },
@@ -42318,11 +42458,6 @@
       "views": 0,
       "users": 0,
       "history": [
-        {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
         {
           "checked": "2026-07-14",
           "views": 0,
@@ -42765,6 +42900,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -42779,11 +42919,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -43225,6 +43360,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -43239,11 +43379,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -43685,6 +43820,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -43699,11 +43839,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -44145,6 +44280,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -44159,11 +44299,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -44605,6 +44740,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -44619,11 +44759,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -45065,6 +45200,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -45079,11 +45219,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -45525,6 +45660,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -45539,11 +45679,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -45985,6 +46120,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -45999,11 +46139,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -46445,6 +46580,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -46459,11 +46599,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -46905,6 +47040,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -46919,11 +47059,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -47365,6 +47500,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -47379,11 +47519,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -47825,6 +47960,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -47839,11 +47979,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -48285,6 +48420,11 @@
         },
         {
           "checked": "2026-10-10",
+          "views": 0,
+          "users": 0
+        },
+        {
+          "checked": "2026-10-11",
           "views": 0,
           "users": 0
         }
@@ -48299,11 +48439,6 @@
       "users": 0,
       "history": [
         {
-          "checked": "2026-07-13",
-          "views": 0,
-          "users": 0
-        },
-        {
           "checked": "2026-07-14",
           "views": 0,
           "users": 0
@@ -48747,34 +48882,16 @@
           "checked": "2026-10-10",
           "views": 0,
           "users": 0
+        },
+        {
+          "checked": "2026-10-11",
+          "views": 0,
+          "users": 0
         }
       ]
     }
   },
   "snapshots": [
-    {
-      "checked": "2026-07-13",
-      "overall": {
-        "total": 84,
-        "visited": 13,
-        "users": 15,
-        "views": 19
-      },
-      "blogs": {
-        "인블로그": {
-          "total": 70,
-          "visited": 13,
-          "users": 15,
-          "views": 19
-        },
-        "티스토리": {
-          "total": 14,
-          "visited": 0,
-          "users": 0,
-          "views": 0
-        }
-      }
-    },
     {
       "checked": "2026-07-14",
       "overall": {
@@ -50813,6 +50930,29 @@
           "visited": 14,
           "users": 19,
           "views": 20
+        },
+        "티스토리": {
+          "total": 36,
+          "visited": 0,
+          "users": 0,
+          "views": 0
+        }
+      }
+    },
+    {
+      "checked": "2026-10-11",
+      "overall": {
+        "total": 112,
+        "visited": 15,
+        "users": 21,
+        "views": 23
+      },
+      "blogs": {
+        "인블로그": {
+          "total": 76,
+          "visited": 15,
+          "users": 21,
+          "views": 23
         },
         "티스토리": {
           "total": 36,
